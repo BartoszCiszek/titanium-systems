@@ -1,0 +1,175 @@
+/* Importujemy czcionkę Poppins z Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Włączenie podstawowych dyrektyw Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset i podstawowe ustawienia dla html i body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Globalne style dla body */
+body {
+  background-color: #212121;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* Ustawienia dla linków */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a::after {
+  display: none !important;
+}
+
+/* Nagłówki */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+/* Ustawienia dla kontenera Next.js */
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Globalny layout dla głównej zawartości */
+main {
+  flex-grow: 1;
+}
+
+/* Opcjonalne style dla elementów UI */
+
+/* Glassmorphism dla nawigacji */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+}
+
+/* Style przycisków */
+.btn {
+  background-color: #008080;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #00bcd4;
+}
+
+/* Animacja ceny - slideInFromRightEdge */
+@keyframes slideInFromRightEdge {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInFromRightEdge {
+  animation: slideInFromRightEdge 0.8s ease-out forwards;
+}
+
+/* Animacja rysowania pionowej kreski – drawLine */
+/* Ta animacja "rysuje" kreskę od dołu do góry */
+@keyframes drawLine {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+/* Klasa pionowej kreski – animacja zostanie uruchomiona przez AOS, gdy element wejdzie do widoku */
+.vertical-line {
+  height: 0;
+  border-left: 1px solid white;
+  opacity: 0;
+}
+
+.vertical-line.aos-animate {
+  animation: drawLine 1.8s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* From Uiverse.io by Shoh2008 */ 
+.loader {
+  position: relative;
+  border-style: solid;
+  box-sizing: border-box;
+  border-width: 40px 60px 30px 60px;
+  border-color: #3760C9 #96DDFC #96DDFC #36BBF7;
+  animation: envFloating 1s ease-in infinite alternate;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  right: 62px;
+  top: -40px;
+  height: 70px;
+  width: 50px;
+  background-image: linear-gradient(#fff 45px, transparent 0),
+            linear-gradient(#fff 45px, transparent 0),
+            linear-gradient(#fff 45px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 30px 4px;
+  background-position: 0px 11px , 8px 35px, 0px 60px;
+  animation: envDropping 0.75s linear infinite;
+}
+
+@keyframes envFloating {
+  0% {
+    transform: translate(-2px, -5px)
+  }
+
+  100% {
+    transform: translate(0, 5px)
+  }
+}
+
+@keyframes envDropping {
+  0% {
+    background-position: 100px 11px , 115px 35px, 105px 60px;
+    opacity: 1;
+  }
+
+  50% {
+    background-position: 0px 11px , 20px 35px, 5px 60px;
+  }
+
+  60% {
+    background-position: -30px 11px , 0px 35px, -10px 60px;
+  }
+
+  75%, 100% {
+    background-position: -30px 11px , -30px 35px, -30px 60px;
+    opacity: 0;
+  }
+}
+
