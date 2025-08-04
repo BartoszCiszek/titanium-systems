@@ -35,17 +35,31 @@ const servicesList = [
     keywords: ["sieć", "wifi", "router", "unifi", "ubiquiti", "lan", "internet", "konfiguracja"]
   },
   {
-    title: "Serwery i wirtualizacja",
-    description: "Wdrażanie serwerów NAS, konfiguracja maszyn wirtualnych i praca zdalna.",
-    link: "/uslugi/wirtualizacja",
+    title: "Serwery NAS (Pamięć Masowa)",
+    description: "Centralizacja i ochrona danych dzięki prywatnej chmurze w Twoim domu lub firmie.",
+    link: "/uslugi/serwery-nas",
     delay: 500,
-    keywords: ["nas", "serwer", "wirtualne maszyny", "vmware", "truenas", "synology", "qnap", "praca zdalna"]
+    keywords: ["nas", "serwer plików", "truenas", "synology", "qnap", "backup", "prywatna chmura"]
+  },
+  {
+    title: "Wirtualizacja i Praca Zdalna",
+    description: "Optymalizacja zasobów sprzętowych i tworzenie wydajnych środowisk do pracy zdalnej.",
+    link: "/uslugi/wirtualizacja",
+    delay: 600,
+    keywords: ["wirtualizacja", "maszyny wirtualne", "vmware", "hyper-v", "praca zdalna", "pulpit zdalny"]
+  },
+    {
+    title: "Rozwiązania Chmurowe Microsoft Azure",
+    description: "Skalowalna i bezpieczna infrastruktura dla Twojej firmy dzięki wdrożeniom w chmurze Azure.",
+    link: "/uslugi/rozwiazania-chmurowe-azure",
+    delay: 700,
+    keywords: ["chmura", "azure", "cloud", "migracja", "backup w chmurze", "azure virtual desktop", "avd"]
   },
   {
     title: "Umowy serwisowe (SLA) dla firm",
     description: "Stała opieka informatyczna z gwarancją czasu reakcji i priorytetowym wsparciem.",
     link: "/uslugi/umowy-serwisowe",
-    delay: 600,
+    delay: 800,
     keywords: ["umowa", "sla", "obsługa firm", "wsparcie it", "outsourcing", "dla biznesu"]
   },
 ];
