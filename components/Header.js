@@ -14,7 +14,7 @@ const Header = () => {
     { name: "Realizacje", path: "/realizacje" },
     { name: "FAQ", path: "/faq" },
     { name: "Rekomendacje", path: "/rekomendacje" },
-    { name: "Kontakt", path: "/kontakt" },
+    { name: "Kontakt", path: "#formularz-kontaktowy" },
   ];
 
   return (

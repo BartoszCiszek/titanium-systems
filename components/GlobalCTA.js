@@ -4,7 +4,7 @@ import Link from 'next/link';
 const GlobalCTA = () => {
   return (
     <div className="fixed bottom-5 right-5 z-50">
-      <Link href="/kontakt" legacyBehavior>
+      <Link href="#formularz-kontaktowy" legacyBehavior>
         <a>
           <button
             className="

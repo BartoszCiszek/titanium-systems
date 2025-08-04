@@ -1,13 +1,24 @@
 // pages/index.js
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from "framer-motion";
 import TextType from '../components/TextType';
+import SpotlightCard from '../components/SpotlightCard'; // <-- Nowy import
+import { FiTarget, FiAward, FiClock, FiCpu, FiShield, FiLifeBuoy } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- 2. Aktualizujemy dane o ikony ---
+const benefits = [
+  { icon: <FiTarget size={32} />, title: "Indywidualne podejście", description: "Każdy projekt traktujemy jako unikalne wyzwanie, dopasowując rozwiązania do Twoich potrzeb." },
+  { icon: <FiAward size={32} />, title: "Profesjonalizm i Pasja", description: "Łączymy wieloletnie doświadczenie z autentyczną pasją do technologii." },
+  { icon: <FiClock size={32} />, title: "Szybki Czas Reakcji", description: "Rozumiemy, jak ważny jest czas w biznesie. Działamy sprawnie i skutecznie." },
+  { icon: <FiCpu size={32} />, title: "Nowoczesne Rozwiązania", description: "Stale śledzimy trendy, aby oferować Ci najnowsze i najbardziej efektywne technologie." },
+  { icon: <FiShield size={32} />, title: "Bezpieczeństwo Danych", description: "Twoje dane są dla nas priorytetem. Stosujemy sprawdzone metody ochrony." },
+  { icon: <FiLifeBuoy size={32} />, title: "Wsparcie na Każdym Etapie", description: "Od konsultacji, przez wdrożenie, aż po stałą opiekę serwisową – jesteśmy z Tobą." },
+];
 export default function Home() {
   useEffect(() => {
     gsap.to(".fixed-bg", {
@@ -42,27 +53,20 @@ export default function Home() {
         <link rel="canonical" href="https://titaniumsystems.pl/" />
       </Head>
 
-      {/* Fixed background */}
       <div
         className="fixed inset-0 bg-cover bg-center fixed-bg z-0"
         style={{ backgroundImage: "url('/images/hero.webp')" }}
       />
 
       <main className="relative z-10">
-        {/* HERO Section */}
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center">
-          
-          {/* TextType */}
           <TextType className="text-8xl font-orbitron"
             text={["Titanium Systems", "Solid IT. No surprises."]}
             typingSpeed={75}
-            pauseDuration={2000}
+            pauseDuration={3000}
             showCursor={true}
             cursorCharacter="|"
           />
-
-
-          {/* Scroll Down Arrow */}
           <motion.a
             href="#aboutme"
             initial={{ opacity: 0, y: 50 }}
@@ -78,7 +82,6 @@ export default function Home() {
           </motion.a>
         </section>
 
-        {/* ABOUT ME Section */}
         <section id="aboutme" className="relative text-white py-48">
           <motion.a
             href="#hero"
@@ -106,7 +109,6 @@ export default function Home() {
 
             <div className="w-full md:w-1/2 flex flex-col justify-center mt-4 md:mt-0 md:ml-4">
               <h2 className="text-3xl font-bold mb-4 text-center text-[#00bcd4]">O mnie</h2>
-              <h3 className="text-xl font-semibold mb-2">Dlaczego warto wybrać Titanium Systems?</h3>
 
               <p className="text-lg text-left">
                 Nazywam się Bartosz Ciszek i stoję za działalnością Titanium Systems. Moja pasja do informatyki i komputerów towarzyszy mi od najmłodszych lat. Dziś przekuwam swoje wieloletnie doświadczenie w nowoczesne rozwiązania IT, oferując usługi tworzone z myślą o najwyższych standardach opieki nad sprzętem i infrastrukturą.
@@ -126,7 +128,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll to Services Section */}
           <motion.a
             href="#rozwoj"
             initial={{ opacity: 0, y: 50 }}
@@ -142,19 +143,36 @@ export default function Home() {
           </motion.a>
         </section>
 
-        {/* SERVICES Section */}
+        {/* --- SEKCJA BENEFITS Z IKONAMI --- */}
+        <section id="benefits" className="text-white py-24">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-4 text-[#00bcd4]">Dlaczego My?</h2>
+            <p className="text-lg text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+              Wybierając Titanium Systems, zyskujesz partnera, który dba o każdy detal Twojej infrastruktury IT.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <SpotlightCard key={index} className="flex flex-col text-center items-center">
+                  {/* --- 3. Dodajemy ikonę --- */}
+                  <div className="mb-4 text-[#00bcd4]">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
+                  <p className="text-gray-400 flex-grow">{benefit.description}</p>
+                </SpotlightCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="rozwoj" className="text-white min-h-screen flex items-center py-12">
           <div className="flex flex-col w-full md:w-10/12 mx-auto p-4 space-y-6 text-lg">
             <h2 className="text-3xl font-bold text-center text-[#00bcd4]">Kompleksowe usługi IT w Poznaniu i Wielkopolsce</h2>
 
             <p>Od lat świadczę w Poznaniu i Wielkopolsce rzetelne usługi informatyczne. Specjalizuję się w serwisie komputerów stacjonarnych oraz naprawie laptopów: diagnoza sprzętowa, wymiana SSD i RAM, reinstalacja Windows/Linux/MacOS.</p>
-
             <p>Konfiguruję sieci LAN i Wi-Fi (Ubiquiti Unifi), tworzę VPN, tunele (Cloudflare, Tailscale) i chronię ruch sieciowy. Dzięki temu masz stabilne i bezpieczne środowisko.</p>
-
             <p>Wdrażam serwery NAS (TrueNAS, Synology, QNAP), planuję kopie zapasowe, odtwarzam dane – usługa backup danych to pewność, że nigdy nic nie zginie.</p>
-
             <p>Migracje do chmury (Microsoft 365, Google Workspace) z konfiguracją Teams, OneDrive czy Dysku Google – pracuj zdalnie wydajnie i bezpiecznie.</p>
-
             <p>Oferuję zdalne wsparcie (TeamViewer, AnyDesk) i dojazd do klienta. Umowy SLA z priorytetową pomocą i monitoringiem (system UniFi) utrzymują Twój biznes w ciągłej gotowości.</p>
           </div>
         </section>
