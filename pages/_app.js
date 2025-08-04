@@ -1,7 +1,9 @@
+// pages/_app.js
 import "../styles/globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import GlobalCTA from "../components/GlobalCTA";  // Dodany import
+import GlobalCTA from "../components/GlobalCTA";
+import ContactFormSection from "../components/ContactFormSection";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -23,8 +25,13 @@ function MyApp({ Component, pageProps }) {
       <main className={`flex-grow ${topPadding}`}>
         <Component {...pageProps} />
       </main>
-      <Footer />
-      <GlobalCTA />  {/* Dodany komponent CTA */}
+      
+      <div className="relative z-20">
+        <ContactFormSection />
+        <Footer />
+      </div>
+
+      <GlobalCTA />
     </div>
   );
 }
