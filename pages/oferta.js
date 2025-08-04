@@ -44,7 +44,7 @@ export default function Oferta() {
             style={animatedStyle}
             className="bg-[#333] rounded-xl p-8 shadow-lg text-center transform transition-transform duration-300"
           >
-            <h2 className="text-2xl font-bold text-[#008080] mb-2">Dla Firm</h2>
+            <h2 className="text-2xl font-bold text-[#008080] mb-2">Firma</h2>
             <p className="text-gray-300">
               Profesjonalne rozwiązania IT dla biznesu.
             </p>
@@ -66,7 +66,7 @@ export default function Oferta() {
             className="bg-[#333] rounded-xl p-8 shadow-lg text-center transform transition-transform duration-300"
           >
             <h2 className="text-2xl font-bold text-[#008080] mb-2">
-              Dla Klientów Indywidualnych
+              Usługi
             </h2>
             <p className="text-gray-300">
               Serwis komputerów i pomoc IT dla każdego.

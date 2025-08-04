@@ -1,4 +1,4 @@
-// pages/realizacje/realizacja2.js
+// pages/realizacje/realizacja1.js
 import Head from "next/head";
 import Image from "next/legacy/image";
 import { useState, useEffect, useRef } from "react";

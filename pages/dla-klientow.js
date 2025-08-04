@@ -28,7 +28,7 @@ export default function DlaKlientow() {
 </Head>
       <main className="container mx-auto py-24 px-4">
         <h1 data-aos="fade-up" className="text-4xl font-bold text-center mb-12">
-          Usługi dla Klientów Indywidualnych
+          Usługi
         </h1>
         <p
           data-aos="fade-up"

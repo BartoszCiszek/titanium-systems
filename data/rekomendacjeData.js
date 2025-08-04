@@ -3,16 +3,16 @@
 export const realizacje = [
     {
       id: 1,
-      logo: "/rekomendacje/loga/logosotisstudio.webp",
-      preview: "/rekomendacje/dokumenty/sotisstudio.webp",
-      full: "/rekomendacje/dokumenty/sotisstudio.webp",
+      logo: "/images/logosotisstudio.webp",
+      preview: "/images/sotisstudio.webp",
+      full: "/images/sotisstudio.webp",
       alt: "Sotis Studio z o.o.",
     },
     {
       id: 2,
-      logo: "/rekomendacje/loga/logopp.webp",
-      preview: "/rekomendacje/dokumenty/pp.webp",
-      full: "/rekomendacje/dokumenty/pp.webp",
+      logo: "/images/logopp.webp",
+      preview: "/images/pp.webp",
+      full: "/images/pp.webp",
       alt: "WTCH - Politechnika Poznańska",
     },
 
