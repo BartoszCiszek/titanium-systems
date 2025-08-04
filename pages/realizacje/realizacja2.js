@@ -4,17 +4,15 @@ import Image from "next/legacy/image";
 import { useState } from "react";
 import Carousel from "../../components/Carousel";
 
-export default function Realizacja1() {
-  // Tablica ścieżek do obrazów; upewnij się, że obrazy istnieją w katalogu public/images
+export default function Realizacja2() {
+  // Dla tej realizacji mamy tylko jedno zdjęcie
   const images = [
     "/images/portfolio2.webp",
   ];
 
-  // Stany do obsługi modalu
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
-  // Funkcja otwierająca modal dla klikniętego obrazu
   const openModal = (img) => {
     setModalImage(img);
     setModalOpen(true);
@@ -28,22 +26,27 @@ export default function Realizacja1() {
   return (
     <div className="min-h-screen bg-[#212121] text-white">
       <Head>
-        <title>Realizacja - Projekt Komputera do gier i małej obróbki wideo</title>
-        <meta name="description" content="Opis projektu Komputera do gier, szczegóły i zdjęcia." />
+        <title>Realizacja - Komputer do gier i obróbki wideo | Titanium Systems</title>
+        <meta name="description" content="Projekt komputera gamingowego z procesorem i5 10600KF i kartą RTX 3060, zoptymalizowanego pod gry i obróbkę wideo." />
       </Head>
       <main className="container mx-auto py-24 px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
           Projekt Komputera do gier i małej obróbki wideo
         </h1>
-        {/* Kontener ograniczający szerokość i wycentrowany */}
         <div className="max-w-4xl mx-auto">
-          <Carousel images={images} onImageClick={openModal} />
-          {/* Tekst specyfikacji pod karuzelą */}
-          <p className="mt-4 text-lg text-left">
-          Projekt Komputera do Gier i Małej Obróbki Wideo
-          </p>
+          {/* Kontener dla karuzeli */}
+          <div className="w-full h-[500px] mb-8">
+            <Carousel 
+              images={images} 
+              onImageClick={openModal}
+              autoplay={true}
+              pauseOnHover={true}
+            />
+          </div>
+          
+          {/* Tekst specyfikacji */}
           <p className="text-left mt-4 text-lg">
-          W ramach zlecenia indywidualnego klienta stworzyłem komputer, który doskonale łączy możliwości nowoczesnych gier z funkcjonalnością przy amatorskiej obróbce wideo. System został zbudowany w oparciu o procesor Intel Core i5 10600KF, kartę graficzną RTX 3060 oraz 16 GB pamięci DDR4 3600MHz, co gwarantuje płynność działania w wymagających aplikacjach oraz stabilność podczas intensywnych sesji rozgrywkowych i edycyjnych.
+            W ramach zlecenia indywidualnego klienta stworzyłem komputer, który doskonale łączy możliwości nowoczesnych gier z funkcjonalnością przy amatorskiej obróbce wideo. System został zbudowany w oparciu o procesor Intel Core i5 10600KF, kartę graficzną RTX 3060 oraz 16 GB pamięci DDR4 3600MHz, co gwarantuje płynność działania w wymagających aplikacjach oraz stabilność podczas intensywnych sesji rozgrywkowych i edycyjnych.
           </p>
           <p className="mt-4 text-lg text-left">
             Zakres prac obejmował:
@@ -63,12 +66,12 @@ export default function Realizacja1() {
             </li>
           </ul>
           <p className="mt-4 text-lg text-left">
-          Dzięki kompleksowemu podejściu do realizacji, stworzony komputer nie tylko spełnia wymagania współczesnych gier, ale również świetnie radzi sobie z zadaniami związanymi z edycją wideo, oferując użytkownikowi wyjątkową wydajność i niezawodność.
+            Dzięki kompleksowemu podejściu do realizacji, stworzony komputer nie tylko spełnia wymagania współczesnych gier, ale również świetnie radzi sobie z zadaniami związanymi z edycją wideo, oferując użytkownikowi wyjątkową wydajność i niezawodność.
           </p>
         </div>
       </main>
 
-      {/* Modal fullscreen z rozmazanym tłem */}
+      {/* Modal fullscreen (bez zmian) */}
       {modalOpen && (
         <div 
           onClick={closeModal}

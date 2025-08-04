@@ -1,3 +1,4 @@
+// components/GlobalCTA.js
 import Link from 'next/link';
 
 const GlobalCTA = () => {
@@ -7,19 +8,23 @@ const GlobalCTA = () => {
         <a>
           <button
             className="
-              bg-[#00bcd4] text-white 
+              bg-[#008080]
               py-1 px-4 
               sm:py-2 sm:px-6 
               text-sm sm:text-base 
               rounded-md 
-              hover:bg-[#028a9c] 
-              transition-transform 
+              hover:bg-[#00bcd4]
+              transition-all
               duration-300 
               hover:-translate-y-1
-              shadow-none
+              shadow-lg
+              font-semibold
             "
           >
-            Skontaktuj się
+            {/* Tekst z efektem "shine" */}
+            <span className="animate-shine">
+              Skontaktuj się
+            </span>
           </button>
         </a>
       </Link>

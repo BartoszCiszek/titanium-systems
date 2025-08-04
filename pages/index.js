@@ -1,9 +1,10 @@
 // pages/index.js
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from "framer-motion";
+import TextType from '../components/TextType';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,22 +51,23 @@ export default function Home() {
       <main className="relative z-10">
         {/* HERO Section */}
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: [0, -20, 0] }}
-            transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
-            style={gpuStyles}
-            className="text-white font-bold drop-shadow-xl font-orbitron text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-[8rem]"
-          >
-            Titanium Systems
-          </motion.h1>
+          
+          {/* TextType */}
+          <TextType className="text-8xl font-orbitron"
+            text={["Titanium Systems", "Solid IT. No surprises."]}
+            typingSpeed={75}
+            pauseDuration={2000}
+            showCursor={true}
+            cursorCharacter="|"
+          />
+
 
           {/* Scroll Down Arrow */}
           <motion.a
             href="#aboutme"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: [0, -20, 0] }}
-            transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
+            transition={{ opacity: { duration: 2, delay: 2.5 }, y: { delay: 2.7, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
             style={gpuStyles}
             className="mt-8 text-white text-3xl cursor-pointer"
             aria-label="Przewiń do sekcji O mnie"

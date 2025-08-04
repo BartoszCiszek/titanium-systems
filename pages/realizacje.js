@@ -75,7 +75,7 @@ export default function Realizacje() {
           Przejrzyj moje portfolio i zobacz, jak nowoczesne rozwiązania zmieniają biznes.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {realizacje.map((item, index) => (
+          {realizacje.reverse().map((item, index) => (
             <PortfolioCard key={item.id} item={item} index={index} />
           ))}
         </div>

@@ -173,3 +173,20 @@ html {
   }
 }
 
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+/* Klasa pomocnicza dla błyszczącego tekstu */
+.animate-shine {
+  /* Kolorystyka gradientu - możesz ją dostosować */
+  background: linear-gradient(110deg, #ffffff 8%, #838383 18%, #ffffff 33%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite; /* Czas trwania animacji */
+}
+

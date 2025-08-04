@@ -3,44 +3,67 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/legacy/image";
 import { motion } from "framer-motion";
 
-const Carousel = ({ images, onImageClick }) => {
+const Carousel = ({ 
+  images, 
+  onImageClick,
+  autoplay = false,
+  autoplayDelay = 5000,
+  pauseOnHover = true 
+}) => {
   const [current, setCurrent] = useState(0);
-  const autoSlideRef = useRef(null);
-  const userInteracted = useRef(false);
+  const intervalRef = useRef(null);
+
+  const startAutoplay = () => {
+    if (autoplay && images.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % images.length);
+      }, autoplayDelay);
+    }
+  };
+
+  const stopAutoplay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
 
   useEffect(() => {
-    if (images.length > 1 && !userInteracted.current) {
-      autoSlideRef.current = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % images.length);
-      }, 5000);
-    }
-    return () => {
-      if (autoSlideRef.current) clearInterval(autoSlideRef.current);
-    };
-  }, [images.length]);
+    startAutoplay();
+    return () => stopAutoplay();
+  }, [images.length, autoplay, autoplayDelay]);
+
+  const handleMouseEnter = () => {
+    if (pauseOnHover) stopAutoplay();
+  };
+
+  const handleMouseLeave = () => {
+    if (pauseOnHover) startAutoplay();
+  };
 
   const nextSlide = () => {
-    userInteracted.current = true;
-    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
     setCurrent((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    userInteracted.current = true;
-    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
-    <div className="relative w-full h-96 overflow-hidden">
+    <div 
+      className="relative w-full h-full overflow-hidden rounded-lg"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {images.map((img, index) => (
         <motion.div
           key={index}
-          onClick={() => current === index && onImageClick(img)}
+          onClick={() => onImageClick(img)}
           initial={{ opacity: 0 }}
           animate={{ opacity: current === index ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           className="absolute inset-0 cursor-pointer"
+          // --- KLUCZOWA POPRAWKA JEST TUTAJ ---
+          // Ta linia sprawia, że niewidoczne slajdy są nieklikalne
           style={{ pointerEvents: current === index ? 'auto' : 'none' }}
         >
           <Image
@@ -48,23 +71,23 @@ const Carousel = ({ images, onImageClick }) => {
             alt={`Slide ${index + 1}`}
             layout="fill"
             objectFit="cover"
-            className="object-cover"
           />
         </motion.div>
       ))}
+      
       {images.length > 1 && (
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-gray-700 transition"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-3 rounded-full hover:bg-opacity-60 transition z-10"
           >
-            ←
+            &#10094;
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-gray-700 transition"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-3 rounded-full hover:bg-opacity-60 transition z-10"
           >
-            →
+            &#10095;
           </button>
         </>
       )}

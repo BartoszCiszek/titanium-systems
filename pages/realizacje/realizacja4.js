@@ -4,8 +4,8 @@ import Image from "next/legacy/image";
 import { useState } from "react";
 import Carousel from "../../components/Carousel";
 
-export default function Realizacja1() {
-  // Tablica ścieżek do obrazów; upewnij się, że obrazy istnieją w katalogu public/images
+export default function Realizacja4() {
+  // Tablica ścieżek do obrazów dla tej realizacji
   const images = [
     "/images/portfolio4.webp",
     "/images/realizacja4_1.webp",
@@ -13,11 +13,10 @@ export default function Realizacja1() {
     "/images/realizacja4_3.webp",
   ];
 
-  // Stany do obsługi modalu
+  // Stany i funkcje modalu (bez zmian)
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
-  // Funkcja otwierająca modal dla klikniętego obrazu
   const openModal = (img) => {
     setModalImage(img);
     setModalOpen(true);
@@ -31,22 +30,30 @@ export default function Realizacja1() {
   return (
     <div className="min-h-screen bg-[#212121] text-white">
       <Head>
-        <title>Realizacja - Karta graficzna RTX 2070</title>
-        <meta name="description" content="Opis projektu Komputera do gier, szczegóły i zdjęcia." />
+        <title>Realizacja - Modernizacja Karty Graficznej RTX 2070 | Titanium Systems</title>
+        <meta name="description" content="Szczegółowy opis modernizacji karty graficznej RTX 2070, w tym czyszczenie, wymiana pasty termoprzewodzącej i termopadów." />
       </Head>
       <main className="container mx-auto py-24 px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
           Modernizacja karty graficznej RTX 2070
         </h1>
-        {/* Kontener ograniczający szerokość i wycentrowany */}
         <div className="max-w-4xl mx-auto">
-          <Carousel images={images} onImageClick={openModal} />
-          {/* Tekst specyfikacji pod karuzelą */}
+          {/* Kontener dla karuzeli */}
+          <div className="w-full h-[500px] mb-8">
+            <Carousel 
+              images={images} 
+              onImageClick={openModal}
+              autoplay={true}
+              pauseOnHover={true}
+            />
+          </div>
+          
+          {/* Tekst specyfikacji */}
           <p className="mt-4 text-lg text-left">
-          Modernizacja karty graficznej RTX 2070
+            Modernizacja karty graficznej RTX 2070
           </p>
           <p className="text-left mt-4 text-lg">
-          Dla klienta indywidualnego przeprowadziłem kompleksową modernizację karty graficznej nvidia RTX 2070. Celem modernizacji było obniżenie temperatur i podniesienie wydajności sprzętu oraz zapewnienie stabilnej i efektywnej pracy.
+            Dla klienta indywidualnego przeprowadziłem kompleksową modernizację karty graficznej nvidia RTX 2070. Celem modernizacji było obniżenie temperatur i podniesienie wydajności sprzętu oraz zapewnienie stabilnej i efektywnej pracy.
           </p>
           <p className="mt-4 text-lg text-left">
             Zakres prac obejmował:
@@ -63,12 +70,12 @@ export default function Realizacja1() {
             </li>
           </ul>
           <p className="mt-4 text-lg text-left">
-          Dzięki przeprowadzonej modernizacji stacja graficzna odzyskała pełną sprawność, temperatury spadły o około 20°C, co pozwoliło na solidny overcloaking karty: +350MHz Core, +1700MHz Memory.
+            Dzięki przeprowadzonej modernizacji stacja graficzna odzyskała pełną sprawność, temperatury spadły o około 20°C, co pozwoliło na solidny overcloaking karty: +350MHz Core, +1700MHz Memory.
           </p>
         </div>
       </main>
 
-      {/* Modal fullscreen z rozmazanym tłem */}
+      {/* Modal fullscreen (bez zmian) */}
       {modalOpen && (
         <div 
           onClick={closeModal}

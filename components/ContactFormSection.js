@@ -41,7 +41,7 @@ const ContactFormSection = () => {
   };
 
   return (
-    <section className="w-full bg-[#2a2a2a] text-white py-16 px-4">
+    <section id="formularz-kontaktowy" className="w-full bg-[#2a2a2a] text-white py-16 px-4">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
         {/* Lewa strona: Dane kontaktowe */}

@@ -4,18 +4,17 @@ import Image from "next/legacy/image";
 import { useState } from "react";
 import Carousel from "../../components/Carousel";
 
-export default function Realizacja1() {
-  // Tablica ścieżek do obrazów; upewnij się, że obrazy istnieją w katalogu public/images
+export default function Realizacja3() {
+  // Tablica ścieżek do obrazów dla tej realizacji
   const images = [
     "/images/portfolio3.webp",
     "/images/realizacja3_1.webp",
   ];
 
-  // Stany do obsługi modalu
+  // Stany i funkcje modalu (bez zmian)
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
-  // Funkcja otwierająca modal dla klikniętego obrazu
   const openModal = (img) => {
     setModalImage(img);
     setModalOpen(true);
@@ -29,22 +28,30 @@ export default function Realizacja1() {
   return (
     <div className="min-h-screen bg-[#212121] text-white">
       <Head>
-        <title>Realizacja - Stacja graficzna</title>
-        <meta name="description" content="Opis projektu Komputera do gier, szczegóły i zdjęcia." />
+        <title>Realizacja - Stacja graficzna dla SOTIS STUDIO</title>
+        <meta name="description" content="Modernizacja i optymalizacja stacji graficznej dla SOTIS STUDIO sp z o.o." />
       </Head>
       <main className="container mx-auto py-24 px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
           Stacja graficzna SOTIS STUDIO sp z o.o.
         </h1>
-        {/* Kontener ograniczający szerokość i wycentrowany */}
         <div className="max-w-4xl mx-auto">
-          <Carousel images={images} onImageClick={openModal} />
-          {/* Tekst specyfikacji pod karuzelą */}
+          {/* Kontener dla karuzeli */}
+          <div className="w-full h-[500px] mb-8">
+            <Carousel 
+              images={images} 
+              onImageClick={openModal}
+              autoplay={true}
+              pauseOnHover={true}
+            />
+          </div>
+          
+          {/* Tekst specyfikacji */}
           <p className="mt-4 text-lg text-left">
-          Modernizacja stacji graficznej
+            Modernizacja stacji graficznej
           </p>
           <p className="text-left mt-4 text-lg">
-          Dla firmy SOTIS STUDIO sp z o.o. przeprowadziłem kompleksową modernizację stacji graficznej – kluczowego narzędzia do montażu filmów reklamowych i promocyjnych. Celem modernizacji było podniesienie wydajności sprzętu oraz zapewnienie stabilnej i efektywnej pracy przy zaawansowanych projektach multimedialnych.
+            Dla firmy SOTIS STUDIO sp z o.o. przeprowadziłem kompleksową modernizację stacji graficznej – kluczowego narzędzia do montażu filmów reklamowych i promocyjnych. Celem modernizacji było podniesienie wydajności sprzętu oraz zapewnienie stabilnej i efektywnej pracy przy zaawansowanych projektach multimedialnych.
           </p>
           <p className="mt-4 text-lg text-left">
             Zakres prac obejmował:
@@ -64,12 +71,12 @@ export default function Realizacja1() {
             </li>
           </ul>
           <p className="mt-4 text-lg text-left">
-          Dzięki przeprowadzonej modernizacji stacja graficzna odzyskała pełną sprawność, umożliwiając sprawny i efektywny montaż materiałów filmowych. Realizacja ta doskonale pokazuje, jak dbałość o detale oraz regularne utrzymanie sprzętu wpływają na jego długofalową wydajność i niezawodność.
+            Dzięki przeprowadzonej modernizacji stacja graficzna odzyskała pełną sprawność, umożliwiając sprawny i efektywny montaż materiałów filmowych. Realizacja ta doskonale pokazuje, jak dbałość o detale oraz regularne utrzymanie sprzętu wpływają na jego długofalową wydajność i niezawodność.
           </p>
         </div>
       </main>
 
-      {/* Modal fullscreen z rozmazanym tłem */}
+      {/* Modal fullscreen (bez zmian) */}
       {modalOpen && (
         <div 
           onClick={closeModal}

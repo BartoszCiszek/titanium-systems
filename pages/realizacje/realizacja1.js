@@ -5,16 +5,14 @@ import { useState } from "react";
 import Carousel from "../../components/Carousel";
 
 export default function Realizacja1() {
-  // Tablica ścieżek do obrazów; upewnij się, że obrazy istnieją w katalogu public/images
+  // Teraz działa zarówno dla jednego, jak i dla wielu obrazów
   const images = [
     "/images/portfolio1.webp",
   ];
 
-  // Stany do obsługi modalu
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
-  // Funkcja otwierająca modal dla klikniętego obrazu
   const openModal = (img) => {
     setModalImage(img);
     setModalOpen(true);
@@ -33,17 +31,25 @@ export default function Realizacja1() {
       </Head>
       <main className="container mx-auto py-24 px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
-        Projekt Komputera do gier
+          Projekt Komputera do gier
         </h1>
-        {/* Kontener ograniczający szerokość i wycentrowany */}
         <div className="max-w-4xl mx-auto">
-          <Carousel images={images} onImageClick={openModal} />
+          {/* Kontener dla karuzeli z określoną wysokością */}
+          <div className="w-full h-[500px] mb-8">
+            <Carousel 
+              images={images} 
+              onImageClick={openModal}
+              autoplay={true}
+              pauseOnHover={true}
+            />
+          </div>
+          
           {/* Tekst specyfikacji pod karuzelą */}
           <p className="mt-4 text-lg text-left">
-          Projekt Komputera do Gier – 2017 rok
+            Projekt Komputera do Gier – 2017 rok
           </p>
           <p className="text-left mt-4 text-lg">
-          W ramach zlecenia indywidualnego klienta stworzyłem komputer do gier, który idealnie łączył moc obliczeniową z atrakcyjną wydajnością graficzną. System oparty był na procesorze AMD FX 9590, karcie graficznej GTX 1060 6GB oraz 16 GB pamięci DDR4, co zapewniało płynne działanie zarówno w dynamicznych tytułach gier, jak i przy codziennych zadaniach.
+            W ramach zlecenia indywidualnego klienta stworzyłem komputer do gier, który idealnie łączył moc obliczeniową z atrakcyjną wydajnością graficzną. System oparty był na procesorze AMD FX 9590, karcie graficznej GTX 1060 6GB oraz 16 GB pamięci DDR4, co zapewniało płynne działanie zarówno w dynamicznych tytułach gier, jak i przy codziennych zadaniach.
           </p>
           <p className="mt-4 text-lg text-left">
             Zakres prac obejmował:
@@ -63,12 +69,12 @@ export default function Realizacja1() {
             </li>
           </ul>
           <p className="mt-4 text-lg text-left">
-          Projekt zrealizowany w 2017 roku jest przykładem, jak odpowiedni dobór komponentów oraz profesjonalny montaż mogą stworzyć komputer, który nie tylko spełnia oczekiwania w zakresie gier, ale również zapewnia komfortową pracę przy codziennych zadaniach.
+            Projekt zrealizowany w 2017 roku jest przykładem, jak odpowiedni dobór komponentów oraz profesjonalny montaż mogą stworzyć komputer, który nie tylko spełnia oczekiwania w zakresie gier, ale również zapewnia komfortową pracę przy codziennych zadaniach.
           </p>
         </div>
       </main>
 
-      {/* Modal fullscreen z rozmazanym tłem */}
+      {/* Modal fullscreen (bez zmian) */}
       {modalOpen && (
         <div 
           onClick={closeModal}
