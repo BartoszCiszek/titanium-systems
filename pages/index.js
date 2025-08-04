@@ -1,16 +1,15 @@
 // pages/index.js
-import React, { useEffect } from "react";
 import Head from "next/head";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from "framer-motion";
 import TextType from '../components/TextType';
-import SpotlightCard from '../components/SpotlightCard'; // <-- Nowy import
+import SpotlightCard from '../components/SpotlightCard';
 import { FiTarget, FiAward, FiClock, FiCpu, FiShield, FiLifeBuoy } from "react-icons/fi";
+import LiquidChrome from "../components/LiquidChrome";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- 2. Aktualizujemy dane o ikony ---
 const benefits = [
   { icon: <FiTarget size={32} />, title: "Indywidualne podejście", description: "Każdy projekt traktujemy jako unikalne wyzwanie, dopasowując rozwiązania do Twoich potrzeb." },
   { icon: <FiAward size={32} />, title: "Profesjonalizm i Pasja", description: "Łączymy wieloletnie doświadczenie z autentyczną pasją do technologii." },
@@ -19,19 +18,9 @@ const benefits = [
   { icon: <FiShield size={32} />, title: "Bezpieczeństwo Danych", description: "Twoje dane są dla nas priorytetem. Stosujemy sprawdzone metody ochrony." },
   { icon: <FiLifeBuoy size={32} />, title: "Wsparcie na Każdym Etapie", description: "Od konsultacji, przez wdrożenie, aż po stałą opiekę serwisową – jesteśmy z Tobą." },
 ];
-export default function Home() {
-  useEffect(() => {
-    gsap.to(".fixed-bg", {
-      filter: "blur(8px)",
-      ease: "none",
-      scrollTrigger: {
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-  }, []);
 
+export default function Home() {
+  
   const gpuStyles = {
     willChange: "transform",
     WebkitBackfaceVisibility: "hidden",
@@ -53,20 +42,20 @@ export default function Home() {
         <link rel="canonical" href="https://titaniumsystems.pl/" />
       </Head>
 
-      <div
-        className="fixed inset-0 bg-cover bg-center fixed-bg z-0"
-        style={{ backgroundImage: "url('/images/hero.webp')" }}
-      />
+      <div className="fixed inset-0 z-0">
+        <LiquidChrome />
+      </div>
 
       <main className="relative z-10">
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center">
-          <TextType className="text-8xl font-orbitron"
+          <TextType className="text-8xl font-orbitron font-bold text-shadow-custom"
             text={["Titanium Systems", "Solid IT. No surprises."]}
             typingSpeed={75}
             pauseDuration={3000}
             showCursor={true}
             cursorCharacter="|"
           />
+
           <motion.a
             href="#aboutme"
             initial={{ opacity: 0, y: 50 }}
@@ -83,68 +72,65 @@ export default function Home() {
         </section>
 
         <section id="aboutme" className="relative text-white py-48">
-          <motion.a
-            href="#hero"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: [0, 20, 0] }}
-            transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
-            style={gpuStyles}
-            className="absolute top-6 left-1/2 -translate-x-1/2 text-white text-3xl cursor-pointer"
-            aria-label="Przewiń do sekcji Hero"
-          >
-            <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.a>
+          {/* Div dla tła z gradientem */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 backdrop-blur-sm"></div>
+          
+          {/* Kontener na treść, aby była nad tłem */}
+          <div className="relative">
+              <motion.a
+                href="#hero"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: [0, 20, 0] }}
+                transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
+                style={gpuStyles}
+                className="absolute top-[-150px] left-1/2 -translate-x-1/2 text-white text-3xl cursor-pointer"
+                aria-label="Przewiń do sekcji Hero"
+              >
+                <svg className="w-8 h-8 rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.a>
 
-          <div className="flex flex-col md:flex-row items-stretch w-full md:w-10/12 mx-auto p-4">
-            <div className="w-full md:w-1/2 flex">
-              <img
-                src="/images/about.webp"
-                alt="Informatyk Poznań – Bartosz Ciszek – Titanium Systems"
-                className="w-full h-auto max-w-[700px] max-h-[800px] object-cover rounded-lg shadow-lg drop-shadow-[0_0_10px_rgba(0,0,0,0.6)] mx-auto"
-                loading="lazy"
-              />
-            </div>
+              <div className="flex flex-col md:flex-row items-stretch w-full md:w-10/12 mx-auto p-4">
+                <div className="w-full md:w-1/2 flex">
+                  <img
+                    src="/images/about.webp"
+                    alt="Informatyk Poznań – Bartosz Ciszek – Titanium Systems"
+                    className="w-full h-auto max-w-[700px] max-h-[800px] object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-full md:w-1/2 flex flex-col justify-center mt-4 md:mt-0 md:ml-4">
+                  <h2 className="text-3xl font-bold mb-4 text-center text-[#00bcd4]">O mnie</h2>
+                  <h3 className="text-xl font-semibold mb-2">Dlaczego warto wybrać Titanium Systems?</h3>
+                  <p className="text-lg text-left">Nazywam się Bartosz Ciszek i stoję za działalnością Titanium Systems...</p>
+                  <p className="mt-4 text-lg text-left">W mojej pracy kieruję się trzema kluczowymi zasadami:</p>
+                  <ul className="list-disc ml-6 text-lg mt-2 text-left">
+                    <li><strong>Profesjonalizm:</strong> Każda usługa realizowana jest z najwyższą starannością.</li>
+                    <li><strong>Pasja i rozwój:</strong> Informatyka to moje życie, stale się szkolę i poszukuję innowacji.</li>
+                    <li><strong>Indywidualne podejście:</strong> Oferta zawsze dopasowana do potrzeb klienta.</li>
+                  </ul>
+                  <p className="mt-4 text-lg text-left">Pod marką Titanium Systems łączę pasję, determinację i bogatą wiedzę...</p>
+                </div>
+              </div>
 
-            <div className="w-full md:w-1/2 flex flex-col justify-center mt-4 md:mt-0 md:ml-4">
-              <h2 className="text-3xl font-bold mb-4 text-center text-[#00bcd4]">O mnie</h2>
-
-              <p className="text-lg text-left">
-                Nazywam się Bartosz Ciszek i stoję za działalnością Titanium Systems. Moja pasja do informatyki i komputerów towarzyszy mi od najmłodszych lat. Dziś przekuwam swoje wieloletnie doświadczenie w nowoczesne rozwiązania IT, oferując usługi tworzone z myślą o najwyższych standardach opieki nad sprzętem i infrastrukturą.
-              </p>
-
-              <p className="mt-4 text-lg text-left">W mojej pracy kieruję się trzema kluczowymi zasadami:</p>
-
-              <ul className="list-disc ml-6 text-lg mt-2 text-left">
-                <li><strong>Profesjonalizm:</strong> Każda usługa realizowana jest z najwyższą starannością.</li>
-                <li><strong>Pasja i rozwój:</strong> Informatyka to moje życie, stale się szkolę i poszukuję innowacji.</li>
-                <li><strong>Indywidualne podejście:</strong> Oferta zawsze dopasowana do potrzeb klienta.</li>
-              </ul>
-
-              <p className="mt-4 text-lg text-left">
-                Pod marką Titanium Systems łączę pasję, determinację i bogatą wiedzę. Skutecznie realizuję nawet najtrudniejsze wyzwania IT, przekraczając oczekiwania klientów.
-              </p>
-            </div>
+              <motion.a
+                href="#benefits"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: [0, -20, 0] }}
+                transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
+                style={gpuStyles}
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-3xl cursor-pointer"
+                aria-label="Przewiń do sekcji Benefits"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.a>
           </div>
-
-          <motion.a
-            href="#rozwoj"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: [0, -20, 0] }}
-            transition={{ opacity: { duration: 2 }, y: { delay: 2, repeat: Infinity, repeatType: "loop", duration: 2, ease: "easeInOut" } }}
-            style={gpuStyles}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-3xl cursor-pointer"
-            aria-label="Przewiń do sekcji Rozwój usług"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.a>
         </section>
 
-        {/* --- SEKCJA BENEFITS Z IKONAMI --- */}
-        <section id="benefits" className="text-white py-24">
+        <section id="benefits" className="text-white py-24 bg-black bg-opacity-50 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-4 text-[#00bcd4]">Dlaczego My?</h2>
             <p className="text-lg text-center text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -165,7 +151,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="rozwoj" className="text-white min-h-screen flex items-center py-12">
+        <section id="rozwoj" className="text-white min-h-screen flex items-center py-12 bg-black bg-opacity-50 backdrop-blur-sm">
           <div className="flex flex-col w-full md:w-10/12 mx-auto p-4 space-y-6 text-lg">
             <h2 className="text-3xl font-bold text-center text-[#00bcd4]">Kompleksowe usługi IT w Poznaniu i Wielkopolsce</h2>
 

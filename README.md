@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Titanium Systems - Company Website
+This is the repository for the official website of Titanium Systems, a provider of professional IT services. The site is built with Next.js and Tailwind CSS, with a strong focus on modern design and interactive user animations.
 
-## Getting Started
+Live Site Link: https://titaniumsystems.pl
 
-First, run the development server:
+Core Technologies
+Framework: Next.js
 
-```bash
+Styling: Tailwind CSS
+
+Animations: Framer Motion & GSAP
+
+Language: JavaScript / React
+
+Contact Form: Nodemailer (via Next.js API Routes)
+
+Key Features
+Interactive UI: Smooth animations and effects (including "shiny text", "typewriter effect", "spotlight cards") to enhance the user experience.
+
+Services Blog: A dedicated section with detailed descriptions of services, optimized for SEO.
+
+Dynamic Image Carousel: Featured on project pages, with support for autoplay and pause on hover.
+
+Smart Search: Filter services based on title, description, and keywords.
+
+Contact Form: Integrated with Nodemailer for sending email inquiries.
+
+Fully Responsive: The website is designed to work seamlessly on all devices.
+
+Running The Project Locally
+1. Clone the repository
+Bash
+
+git clone https://github.com/BartoszCiszek/titanium-systems.git
+cd titanium-systems
+2. Install dependencies
+It is recommended to use the --legacy-peer-deps flag due to the project's dependency configuration.
+
+Bash
+
+npm install --legacy-peer-deps
+3. Configure Environment Variables
+For the contact form to work, you need to create a .env.local file in the root of the project and add your SMTP server credentials:
+
+EMAIL_USER=your-email@address.com
+EMAIL_PASS=your-email-password
+4. Run the development server
+Bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000 in your browser to see the result.

@@ -79,22 +79,6 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-
-          {/* Instagram – poza menu */}
-          <a
-            href="https://www.instagram.com/it_titaniumsystems"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition flex items-center h-full"
-          >
-            <Image
-              src="/instagram.svg"
-              alt="Instagram"
-              width={66}
-              height={36}
-              className="opacity-80"
-            />
-          </a>
         </div>
       </div>
 

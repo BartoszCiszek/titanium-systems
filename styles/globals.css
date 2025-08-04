@@ -190,3 +190,6 @@ html {
   animation: shine 5s linear infinite; /* Czas trwania animacji */
 }
 
+.text-shadow-custom {
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.7);
+}
