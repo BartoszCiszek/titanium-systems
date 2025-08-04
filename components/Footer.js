@@ -13,7 +13,7 @@ const Footer = () => {
     { name: 'Polityka Prywatności', path: '/polityka' },
   ];
 
-  // Linki do oferty (zgodnie z nową strukturą bloga)
+  // Linki do oferty
   const offerLinks = [
     { name: 'Serwis i modernizacja komputerów', path: '/uslugi/serwis-komputerow' },
     { name: 'Instalacja systemów', path: '/uslugi/instalacja-systemow' },
@@ -25,12 +25,12 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#1c1c1c] text-white py-12 px-4 relative z-20">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
         
         {/* Kolumna 1: Logo i Slogan */}
-        <div className="flex flex-col">
+        {/* ZMIANA: Dodano items-center md:items-start aby centrować na mobilnych */}
+        <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="mb-4">
-            {/* Użyj obrazu logo, które już masz w projekcie */}
             <Image src="/images/logo.webp" alt="Titanium Systems Logo" width={250} height={40} />
           </Link>
           <p className="text-gray-400 mt-2">Solid IT. No surprises.</p>
@@ -66,13 +66,15 @@ const Footer = () => {
         </div>
         
         {/* Kolumna 4: Kontakt */}
-        <div>
+        {/* ZMIANA: Dodano items-center md:items-start aby centrować na mobilnych */}
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-bold mb-4 text-white">Kontakt</h3>
           <ul className="space-y-2 text-gray-300">
             <li>📞 <a href="tel:+48603832422" className="hover:text-[#00bcd4] transition">+48 603 832 422</a></li>
             <li>📧 <a href="mailto:bartosz.ciszek@titaniumsystems.pl" className="hover:text-[#00bcd4] transition">bartosz.ciszek@titaniumsystems.pl</a></li>
           </ul>
-          <div className="flex gap-4 mt-6">
+          {/* ZMIANA: Dodano justify-center md:justify-start aby centrować na mobilnych */}
+          <div className="flex gap-4 mt-6 justify-center md:justify-start">
             <a href="https://www.tiktok.com/@its_titaniumsystems" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
               <img src="/tiktok.svg" alt="TikTok" className="w-8 h-8 opacity-80 transition transform hover:scale-110" />
             </a>

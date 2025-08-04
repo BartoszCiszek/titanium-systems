@@ -10,7 +10,7 @@ const Header = () => {
 
   const menuItems = [
     { name: "Strona główna", path: "/" },
-    { name: "Oferta", path: "/uslugi" },
+    { name: "Usługi", path: "/uslugi" },
     { name: "Realizacje", path: "/realizacje" },
     { name: "FAQ", path: "/faq" },
     { name: "Rekomendacje", path: "/rekomendacje" },
@@ -23,7 +23,7 @@ const Header = () => {
         {/* Logo */}
         <Link
           href="/"
-          className="hover:opacity-80 transition flex items-center bg-white/20 backdrop-filter backdrop-blur-lg backdrop-saturate-150 border border-white/20 rounded-xl px-3 py-1"
+          className="hover:opacity-80 transition flex items-center bg-[#252525] border border-gray-700 rounded-xl px-3 py-1"
         >
           <img
             src="/images/logo.webp"
@@ -59,9 +59,10 @@ const Header = () => {
           )}
         </button>
 
-        {/* Desktop nav + Instagram */}
+        {/* Desktop nav */}
         <div className="hidden lg:flex items-center space-x-3">
-          <nav className="flex items-center space-x-2 bg-white/20 backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-full text-base px-3 py-1 whitespace-nowrap">
+          {/* --- ZMIANA 2: Usunięto blur i shadow, dodano stały kolor tła --- */}
+          <nav className="flex items-center space-x-2 bg-[#252525] border border-gray-700 rounded-full text-base px-3 py-1 whitespace-nowrap">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
@@ -84,7 +85,8 @@ const Header = () => {
 
       {/* Mobile nav */}
       {isMobileMenuOpen && (
-        <nav className="mt-2 flex flex-col space-y-1 bg-white/20 backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-lg text-base px-3 py-2 lg:hidden">
+        // --- ZMIANA 3: Usunięto blur i shadow, dodano stały kolor tła ---
+        <nav className="mt-2 flex flex-col space-y-1 bg-[#252525] border border-gray-700 rounded-lg text-base px-3 py-2 lg:hidden">
           {menuItems.map((item) => (
             <Link
               key={item.path}
@@ -102,8 +104,6 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
-
-          {/* Instagram – mobile */}
           <div className="flex justify-center pt-2">
             <a
               href="https://www.instagram.com/it_titaniumsystems"

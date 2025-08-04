@@ -48,7 +48,8 @@ export default function Home() {
 
       <main className="relative z-10">
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center">
-          <TextType className="text-8xl font-orbitron font-bold text-shadow-custom"
+          <TextType 
+            className="font-orbitron font-bold text-shadow-custom text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl"
             text={["Titanium Systems", "Solid IT. No surprises."]}
             typingSpeed={75}
             pauseDuration={3000}

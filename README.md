@@ -28,6 +28,7 @@ Contact Form: Integrated with Nodemailer for sending email inquiries.
 Fully Responsive: The website is designed to work seamlessly on all devices.
 
 Running The Project Locally
+
 1. Clone the repository
 Bash
 
@@ -39,13 +40,16 @@ It is recommended to use the --legacy-peer-deps flag due to the project's depend
 Bash
 
 npm install --legacy-peer-deps
+
 3. Configure Environment Variables
 For the contact form to work, you need to create a .env.local file in the root of the project and add your SMTP server credentials:
 
 EMAIL_USER=your-email@address.com
 EMAIL_PASS=your-email-password
+
 4. Run the development server
 Bash
 
 npm run dev
+
 Open http://localhost:3000 in your browser to see the result.
