@@ -1,11 +1,13 @@
 // pages/index.js
 import Head from "next/head";
+import Image from "next/legacy/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from "framer-motion";
 import TextType from '../components/TextType';
 import SpotlightCard from '../components/SpotlightCard';
-import { FiTarget, FiAward, FiClock, FiCpu, FiShield, FiLifeBuoy } from "react-icons/fi";
+import CountUp from "../components/CountUp";
+import { FiTarget, FiAward, FiClock, FiCpu, FiShield, FiLifeBuoy, FiUsers } from "react-icons/fi";
 import LiquidChrome from "../components/LiquidChrome";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -150,6 +152,23 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section id="liczbaklientow" className="py-24 bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className="container mx-auto px-4 flex justify-center">
+                <SpotlightCard className="max-w-2xl w-full flex flex-col items-center text-center p-8">
+                    <div className="mb-6">
+                        <Image src="/images/logo.webp" alt="Titanium Systems Logo" width={300} height={48} />
+                    </div>
+                    <div className="text-[#00bcd4] mb-4">
+                        <FiUsers size={50} />
+                    </div>
+                    <div className="text-6xl font-bold text-white mb-2">
+                        +<CountUp to={57} /> 
+                    </div>
+                    <p className="text-xl text-gray-300">Zadowolonych Klientów</p>
+                </SpotlightCard>
+            </div>
         </section>
 
         <section id="rozwoj" className="text-white min-h-screen flex items-center py-12 bg-black bg-opacity-50 backdrop-blur-sm">
