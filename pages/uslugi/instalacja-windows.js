@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function InstalacjaWindows() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Instalacja Windows 10 i 11 Poznań | Czysty System | Titanium Systems</title>
         <meta name="description" content="Profesjonalna instalacja i reinstalacja systemu Windows 11 i 10 w Poznaniu. Czysty system bez zbędnych programów, optymalizacja i instalacja sterowników." />

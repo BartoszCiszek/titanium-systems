@@ -19,7 +19,7 @@ const subServices = [
 
 export default function AdministracjaSieciami() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Administracja i Konfiguracja Sieci LAN/Wi-Fi Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalne usługi sieciowe w Poznaniu. Projektowanie i konfiguracja sieci LAN i Wi-Fi (Ubiquiti Unifi), VPN, zabezpieczenia sieciowe dla domu i firmy." />

@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function KonfiguracjaSieciLanWifi() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Konfiguracja Sieci LAN i Wi-Fi Poznań | Specjalista Ubiquiti Unifi</title>
         <meta name="description" content="Projektowanie i wdrażanie stabilnych sieci przewodowych (LAN) i bezprzewodowych (Wi-Fi) w Poznaniu. Specjalizacja w niezawodnym i skalowalnym systemie Ubiquiti Unifi." />

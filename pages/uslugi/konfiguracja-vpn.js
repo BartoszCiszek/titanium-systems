@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function KonfiguracjaVpn() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Konfiguracja VPN Poznań | Bezpieczny Zdalny Dostęp dla Firm</title>
         <meta name="description" content="Usługi konfiguracji bezpiecznych połączeń VPN w Poznaniu. Zapewnij sobie i pracownikom zdalny i szyfrowany dostęp do zasobów firmowych z dowolnego miejsca." />

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import gsap from "gsap";
+import { FiChevronDown } from "react-icons/fi"; // Dodano nową ikonę
 
 const faqData = [
   {
@@ -56,7 +57,7 @@ export default function FAQ() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white flex flex-col">
+    <div className="min-h-screen text-white flex flex-col">
       <Head>
         <title>FAQ – Usługi IT Poznań | Najczęstsze pytania | Titanium Systems</title>
         <meta
@@ -73,7 +74,7 @@ export default function FAQ() {
       </Head>
 
       <main className="container mx-auto py-24 px-4 flex-grow">
-        <div className="faq-container max-w-3xl mx-auto bg-[#2a2a2a] p-6 rounded-xl shadow-lg">
+        <div className="faq-container max-w-3xl mx-auto bg-[#212121] p-6 rounded-xl shadow-lg">
           <h2 className="faq-title text-2xl md:text-3xl font-bold text-center mb-6">
             Najczęściej zadawane pytania
           </h2>
@@ -84,48 +85,50 @@ export default function FAQ() {
               placeholder="Szukaj pytań..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full max-w-md p-3 text-base rounded-lg bg-[#333] text-white text-center outline-none"
+              className="w-full max-w-md p-3 text-base rounded-lg bg-[#333] text-white text-center outline-none border-2 border-transparent focus:border-[#00bcd4] transition"
             />
           </div>
 
           {filteredFaqs.map((faq, index) => (
             <div
               key={index}
-              className={`faq-item mb-4 rounded-lg overflow-hidden shadow-md ${
-                openIndexes.includes(index) ? "show" : ""
-              }`}
+              className={`faq-item mb-4 rounded-lg overflow-hidden shadow-md`}
             >
               <button
-                className="faq-question w-full px-4 py-3 bg-[#008080] hover:bg-[#007070] text-white font-semibold flex justify-between items-center rounded-t-lg transition-colors"
+                className="faq-question w-full px-4 py-3 bg-[#008080] hover:bg-[#3d3d3d] text-white font-semibold flex justify-between items-center transition-colors"
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                <span
-                  className={`faq-arrow transition-transform ${
-                    openIndexes.includes(index) ? "rotate-180" : ""
+                <FiChevronDown
+                  className={`transition-transform duration-300 ${
+                    openIndexes.includes(index) ? "rotate-180 text-[#00bcd4]" : ""
                   }`}
-                >
-                  ▼
-                </span>
+                />
               </button>
-              <div className="faq-answer transition-all ease-out max-h-0 overflow-hidden bg-[#222] px-4 rounded-b-lg">
-                <p className="py-3 whitespace-pre-wrap">{faq.answer}</p>
-              </div>
+              {openIndexes.includes(index) && (
+                <div className="faq-answer px-4 py-3 bg-[#2a2a2a] rounded-b-lg animate-fade-in-down">
+                  <p className="whitespace-pre-wrap">{faq.answer}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
       </main>
-
+      
       <style jsx>{`
-        html {
-          scroll-behavior: smooth;
+        .animate-fade-in-down {
+          animation: fadeInDown 0.5s ease-out;
         }
-        .faq-item.show .faq-answer {
-          max-height: 500px;
-          padding: 15px;
-        }
-        .faq-arrow {
-          font-size: 20px;
+
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </div>

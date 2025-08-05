@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function WymianaPasty() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Wymiana Pasty Termoprzewodzącej Poznań | CPU i GPU</title>
         <meta name="description" content="Profesjonalna wymiana pasty termoprzewodzącej na procesorze (CPU) i karcie graficznej (GPU) w Poznaniu. Obniż temperatury, zwiększ wydajność i ciesz się cichą pracą komputera." />

@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function WymianaKomponentow() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Wymiana Podzespołów i Modernizacja Komputera Poznań | Titanium Systems</title>
         <meta name="description" content="Upgrade i modernizacja komputera w Poznaniu. Profesjonalna wymiana karty graficznej, procesora, pamięci RAM, dysku SSD. Zwiększ wydajność swojego PC." />

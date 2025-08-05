@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam"; // Nowy import
 
 export default function SkladanieKomputerow() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Składanie Komputerów na Zamówienie Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalne składanie komputerów PC na zamówienie w Poznaniu. Dobór podzespołów, montaż i optymalizacja pod gry, pracę biurową i zadania specjalistyczne." />

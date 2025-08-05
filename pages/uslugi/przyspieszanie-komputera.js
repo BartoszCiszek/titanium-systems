@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function PrzyspieszanieKomputera() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Przyspieszanie i Optymalizacja Komputera Poznań | Titanium Systems</title>
         <meta name="description" content="Twój komputer działa wolno? Oferujemy profesjonalne usługi optymalizacji i przyspieszania systemu Windows w Poznaniu. Diagnoza, czyszczenie, modernizacja." />

@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function WsparcieZdalneHelpdesk() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Wsparcie Zdalne i Helpdesk dla Firm Poznań | Szybka Pomoc IT</title>
         <meta name="description" content="Szybka i skuteczna pomoc zdalna (helpdesk) dla pracowników Twojej firmy w Poznaniu. Rozwiązywanie problemów z oprogramowaniem, pocztą, drukarkami i sprzętem." />

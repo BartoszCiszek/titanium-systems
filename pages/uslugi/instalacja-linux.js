@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function InstalacjaLinux() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Instalacja Linux Poznań | Ubuntu, Mint, Debian | Titanium Systems</title>
         <meta name="description" content="Profesjonalna instalacja i konfiguracja dystrybucji Linux w Poznaniu. Przygotowanie środowiska do pracy, nauki lub jako serwer domowy." />

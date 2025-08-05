@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function SzyfrowanieDanych() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Szyfrowanie Dysków BitLocker Poznań | Ochrona Danych | Titanium Systems</title>
         <meta name="description" content="Profesjonalne usługi szyfrowania dysków twardych za pomocą technologii Microsoft BitLocker w Poznaniu. Zabezpiecz swoje dane firmowe i prywatne przed kradzieżą." />

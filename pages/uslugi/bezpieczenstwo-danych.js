@@ -23,7 +23,7 @@ const subServices = [
 
 export default function BezpieczenstwoDanych() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Bezpieczeństwo i Odzyskiwanie Danych Poznań | Titanium Systems</title>
         <meta name="description" content="Kompleksowe usługi ochrony danych w Poznaniu: backup, odzyskiwanie danych z dysków, szyfrowanie BitLocker." />

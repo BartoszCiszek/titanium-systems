@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function OcUvKomputera() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Overclocking (OC) i Undervolting (UV) Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalne podkręcanie (OC) i undervolting (UV) procesora i karty graficznej w Poznaniu. Zwiększ wydajność lub popraw kulturę pracy swojego komputera." />

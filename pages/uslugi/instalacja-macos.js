@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function InstalacjaMacos() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Instalacja MacOS Poznań | Czysty System na Twoim Macu</title>
         <meta name="description" content="Profesjonalna instalacja i reinstalacja systemu MacOS w Poznaniu. Przygotowanie do sprzedaży, aktualizacja, rozwiązywanie problemów ze stabilnością." />

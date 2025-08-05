@@ -18,7 +18,7 @@ const subServices = [
 
 export default function UmowySerwisowe() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Umowy Serwisowe IT (SLA) dla Firm w Poznaniu | Titanium Systems</title>
         <meta name="description" content="Stała obsługa informatyczna dla firm w Poznaniu. Gwarancja czasu reakcji (SLA), priorytetowe wsparcie, monitoring i outsourcing IT." />

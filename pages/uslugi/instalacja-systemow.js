@@ -23,7 +23,7 @@ const subServices = [
 
 export default function InstalacjaSystemow() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Instalacja Systemów Windows, MacOS, Linux Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalna instalacja i konfiguracja systemów operacyjnych Windows, MacOS i Linux w Poznaniu. Czysty system, optymalizacja i instalacja sterowników." />

@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function Wirtualizacja() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Wirtualizacja i Praca Zdalna Poznań | VMware, Hyper-V | Titanium Systems</title>
         <meta name="description" content="Usługi wirtualizacji serwerów i stacji roboczych w Poznaniu. Optymalizacja zasobów i wdrażanie wydajnych środowisk do pracy zdalnej." />

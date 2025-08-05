@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function AzureCloud() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Rozwiązania Chmurowe Microsoft Azure Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalne wdrożenia i zarządzanie usługami chmurowymi Microsoft Azure w Poznaniu. Azure Virtual Desktop, backup w chmurze, skalowalna infrastruktura dla firm." />

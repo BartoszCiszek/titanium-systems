@@ -21,7 +21,7 @@ const PortfolioCard = ({ item, index }) => {
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.01 }}
       style={gpuAccelerationStyles}
-      className="bg-[#333] rounded-xl overflow-hidden shadow-lg"
+      className="bg-[#212121] rounded-xl overflow-hidden shadow-lg"
     >
       <motion.div style={{ y, ...gpuAccelerationStyles }} className="relative w-full h-64">
         <Image
@@ -48,7 +48,7 @@ const PortfolioCard = ({ item, index }) => {
 
 export default function Realizacje() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Realizacje – Portfolio Usług IT | Titanium Systems Poznań</title>
         <meta

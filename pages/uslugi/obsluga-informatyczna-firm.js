@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function ObslugaInformatycznaFirm() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Stała Obsługa Informatyczna Firm Poznań | Outsourcing IT</title>
         <meta name="description" content="Kompleksowa opieka informatyczna (outsourcing IT) dla firm w Poznaniu. Zarządzanie siecią, serwerami, backupem i bezpieczeństwem. Twój zewnętrzny, profesjonalny dział IT." />

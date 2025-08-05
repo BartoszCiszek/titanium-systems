@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function SerweryNAS() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Serwery NAS Poznań - TrueNAS, Synology, QNAP | Titanium Systems</title>
         <meta name="description" content="Profesjonalne wdrożenia i konfiguracja serwerów NAS w Poznaniu. Twoja prywatna chmura do backupu i centralizacji danych." />

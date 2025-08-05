@@ -8,7 +8,6 @@ import TextType from '../components/TextType';
 import SpotlightCard from '../components/SpotlightCard';
 import CountUp from "../components/CountUp";
 import { FiTarget, FiAward, FiClock, FiCpu, FiShield, FiLifeBuoy, FiUsers } from "react-icons/fi";
-import LiquidChrome from "../components/LiquidChrome";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,10 +43,6 @@ export default function Home() {
         <link rel="canonical" href="https://titaniumsystems.pl/" />
       </Head>
 
-      <div className="fixed inset-0 z-0">
-        <LiquidChrome />
-      </div>
-
       <main className="relative z-10">
         <section id="hero" className="min-h-screen flex flex-col items-center justify-center">
           <TextType 
@@ -75,8 +70,6 @@ export default function Home() {
         </section>
 
         <section id="aboutme" className="relative text-white py-48">
-          {/* Div dla tła z gradientem */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 backdrop-blur-sm"></div>
           
           {/* Kontener na treść, aby była nad tłem */}
           <div className="relative">
@@ -133,7 +126,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="text-white py-24 bg-black bg-opacity-50 backdrop-blur-sm">
+        <section id="benefits" className="text-white py-24">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-4 text-[#00bcd4]">Dlaczego My?</h2>
             <p className="text-lg text-center text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -154,7 +147,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="liczbaklientow" className="py-24 bg-black bg-opacity-50 backdrop-blur-sm">
+        <section id="liczbaklientow" className="py-24">
             <div className="container mx-auto px-4 flex justify-center">
                 <SpotlightCard className="max-w-2xl w-full flex flex-col items-center text-center p-8">
                     <div className="mb-6">
@@ -171,7 +164,7 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="rozwoj" className="text-white min-h-screen flex items-center py-12 bg-black bg-opacity-50 backdrop-blur-sm">
+        <section id="rozwoj" className="text-white min-h-screen flex items-center py-12">
           <div className="flex flex-col w-full md:w-10/12 mx-auto p-4 space-y-6 text-lg">
             <h2 className="text-3xl font-bold text-center text-[#00bcd4]">Kompleksowe usługi IT w Poznaniu i Wielkopolsce</h2>
 

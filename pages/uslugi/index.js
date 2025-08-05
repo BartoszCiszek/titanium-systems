@@ -79,7 +79,7 @@ export default function Uslugi() {
   });
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Usługi IT – Serwis Komputerów, Sieci, Bezpieczeństwo | Titanium Systems</title>
         <meta name="description" content="Poznaj pełen zakres profesjonalnych usług IT dla klientów indywidualnych i firm w Poznaniu. Serwis, sieci, serwery i więcej." />

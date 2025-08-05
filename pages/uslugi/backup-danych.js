@@ -6,7 +6,7 @@ import { TracingBeam } from "../../components/ui/tracing-beam";
 
 export default function BackupDanych() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Backup i Kopie Zapasowe Danych Poznań | Titanium Systems</title>
         <meta name="description" content="Profesjonalne usługi tworzenia kopii zapasowych (backup) dla firm i klientów indywidualnych w Poznaniu. Zabezpiecz swoje zdjęcia, dokumenty i pliki firmowe." />

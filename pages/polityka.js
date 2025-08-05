@@ -16,7 +16,7 @@ export default function Polityka() {
   }, []);
 
   return (
-    <div className="bg-[#212121] text-white min-h-screen">
+    <div className="text-white min-h-screen">
       <Head>
   <title>Polityka Prywatności – Titanium Systems | Usługi IT Poznań</title>
   <meta

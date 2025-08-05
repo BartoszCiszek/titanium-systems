@@ -33,7 +33,7 @@ const subServices = [
 
 export default function SerwisKomputerow() {
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Serwis i Modernizacja Komputerów Poznań | Titanium Systems</title>
         <meta name="description" content="Kompleksowe usługi serwisowe i modernizacyjne dla komputerów i laptopów. Wybierz interesującą Cię usługę i dowiedz się więcej." />
