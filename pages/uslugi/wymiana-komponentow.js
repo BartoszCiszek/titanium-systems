@@ -20,7 +20,7 @@ export default function WymianaKomponentow() {
             </h1>
 
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/portfolio3.webp" alt="Nowoczesne podzespoły komputerowe gotowe do montażu" layout="fill" objectFit="cover" />
+              <Image src="/images/wymiana-komponentow.webp" alt="Nowoczesne podzespoły komputerowe gotowe do montażu" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

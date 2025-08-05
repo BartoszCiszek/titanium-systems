@@ -19,7 +19,7 @@ export default function KonfiguracjaSieciLanWifi() {
               Projektowanie i Konfiguracja Sieci LAN/Wi-Fi
             </h1>
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-                <Image src="/images/portfolio2.webp" alt="Profesjonalny punkt dostępowy Wi-Fi zamontowany na ścianie" layout="fill" objectFit="cover" />
+                <Image src="/images/konfiguracja-sieci-lan-wifi.webp" alt="Profesjonalny punkt dostępowy Wi-Fi zamontowany na ścianie" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

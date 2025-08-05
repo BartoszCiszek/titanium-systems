@@ -33,7 +33,9 @@ Running The Project Locally
 Bash
 
 git clone https://github.com/BartoszCiszek/titanium-systems.git
+
 cd titanium-systems
+
 2. Install dependencies
 It is recommended to use the --legacy-peer-deps flag due to the project's dependency configuration.
 

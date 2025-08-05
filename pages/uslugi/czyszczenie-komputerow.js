@@ -21,7 +21,7 @@ export default function CzyszczenieKomputerow() {
             </h1>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/realizacja4_1.webp" alt="Wnętrze komputera przed czyszczeniem" layout="fill" objectFit="cover" />
+              <Image src="/images/czyszczenie-komputerow.webp" alt="Wnętrze komputera przed czyszczeniem" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

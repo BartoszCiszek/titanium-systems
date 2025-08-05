@@ -20,7 +20,7 @@ export default function KonfiguracjaVpn() {
             </h1>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-                <Image src="/images/maintenance.webp" alt="Symbol połączenia VPN na mapie świata" layout="fill" objectFit="cover" />
+                <Image src="/images/konfiguracja-vpn.webp" alt="Symbol połączenia VPN na mapie świata" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

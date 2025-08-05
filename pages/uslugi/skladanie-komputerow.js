@@ -21,7 +21,7 @@ export default function SkladanieKomputerow() {
             </h1>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/portfolio1.webp" alt="Komputer stacjonarny złożony na zamówienie" layout="fill" objectFit="cover" />
+              <Image src="/images/skladanie-komputerow.webp" alt="Komputer stacjonarny złożony na zamówienie" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

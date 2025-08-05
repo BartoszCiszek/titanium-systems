@@ -20,7 +20,7 @@ export default function BackupDanych() {
             </h1>
 
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/maintenance.webp" alt="Bezpieczne przechowywanie danych w chmurze i na serwerze NAS" layout="fill" objectFit="cover" />
+              <Image src="/images/backup-danych.webp" alt="Bezpieczne przechowywanie danych w chmurze i na serwerze NAS" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

@@ -20,7 +20,7 @@ export default function OcUvKomputera() {
             </h1>
 
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/realizacja4_3.webp" alt="Wykresy wydajności i temperatur po OC i UV" layout="fill" objectFit="cover" />
+              <Image src="/images/oc-uv-komputera.webp" alt="Wykresy wydajności i temperatur po OC i UV" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

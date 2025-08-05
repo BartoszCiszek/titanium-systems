@@ -21,7 +21,7 @@ export default function AzureCloud() {
             </h1>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/hero.webp" alt="Wizualizacja chmury obliczeniowej Azure" layout="fill" objectFit="cover" />
+              <Image src="/images/rozwiazania-chmurowe-azure.webp" alt="Wizualizacja chmury obliczeniowej Azure" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

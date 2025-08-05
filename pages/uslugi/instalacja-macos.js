@@ -20,7 +20,7 @@ export default function InstalacjaMacos() {
             </h1>
 
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/about.webp" alt="Elegancki interfejs systemu MacOS" layout="fill" objectFit="cover" />
+              <Image src="/images/macos.webp" alt="Elegancki interfejs systemu MacOS" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">
