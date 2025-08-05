@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function Custom404() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#212121] text-white text-center p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white text-center p-8">
       <Head>
         <title>404 - Strona nie znaleziona | Titanium Systems</title>
         <meta name="robots" content="noindex, nofollow" />
