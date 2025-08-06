@@ -1,3 +1,4 @@
+// components/TextType.js
 "use client";
 
 import { useEffect, useRef, useState, createElement } from "react";
