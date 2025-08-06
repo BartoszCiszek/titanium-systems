@@ -1,5 +1,4 @@
-import "../styles/StarBorder.css";
-
+// components/StarBorder.js
 const StarBorder = ({
   as: Component = "button",
   className = "",
