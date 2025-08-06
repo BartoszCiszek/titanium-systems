@@ -24,7 +24,7 @@ export default function Realizacja2() {
   };
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Realizacja - Komputer do gier i obróbki wideo | Titanium Systems</title>
         <meta name="description" content="Projekt komputera gamingowego z procesorem i5 10600KF i kartą RTX 3060, zoptymalizowanego pod gry i obróbkę wideo." />

@@ -28,7 +28,7 @@ export default function Realizacja4() {
   };
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Realizacja - Modernizacja Karty Graficznej RTX 2070 | Titanium Systems</title>
         <meta name="description" content="Szczegółowy opis modernizacji karty graficznej RTX 2070, w tym czyszczenie, wymiana pasty termoprzewodzącej i termopadów." />

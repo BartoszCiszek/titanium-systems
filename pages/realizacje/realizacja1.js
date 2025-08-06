@@ -24,7 +24,7 @@ export default function Realizacja1() {
   };
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Realizacja - Projekt Komputera do gier</title>
         <meta name="description" content="Opis projektu Komputera do gier, szczegóły i zdjęcia." />
