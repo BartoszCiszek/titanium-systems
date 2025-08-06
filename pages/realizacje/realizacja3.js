@@ -26,7 +26,7 @@ export default function Realizacja3() {
   };
 
   return (
-    <div className="min-h-screen bg-[#212121] text-white">
+    <div className="min-h-screen text-white">
       <Head>
         <title>Realizacja - Stacja graficzna dla SOTIS STUDIO</title>
         <meta name="description" content="Modernizacja i optymalizacja stacji graficznej dla SOTIS STUDIO sp z o.o." />
