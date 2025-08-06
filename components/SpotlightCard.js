@@ -1,6 +1,5 @@
 // components/SpotlightCard.js
 import { useRef } from "react";
-import "../styles/SpotlightCard.css"; // Zmieniamy ścieżkę do stylów
 
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(0, 188, 212, 0.15)" }) => {
   const divRef = useRef(null);

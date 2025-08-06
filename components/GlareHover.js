@@ -1,5 +1,3 @@
-import "../styles/GlareHover.css";
-
 const GlareHover = ({
   width = "500px",
   height = "500px",
