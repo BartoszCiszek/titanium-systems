@@ -7,9 +7,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GlobalCTA from "../components/GlobalCTA";
 import ContactFormSection from "../components/ContactFormSection";
+import DarkVeil from "../components/DarkVeil";
 import '../styles/GlareHover.css'
 import '../styles/SpotlightCard.css'
-import DarkVeil from "../components/DarkVeil";
+import '../styles/StarBorder.css'
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
