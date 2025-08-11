@@ -1,7 +1,7 @@
 // components/Footer.js
 import Link from 'next/link';
 import Image from "next/legacy/image";
-import { FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   const quickLinks = [
@@ -78,6 +78,12 @@ const Footer = () => {
                   <a href="https://www.tiktok.com/@its_titaniumsystems" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex items-center gap-2 text-gray-300 hover:text-[#00bcd4] transition justify-center sm:justify-start">
                     <FaTiktok size={24} />
                     <span>TikTok</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/open-source" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex items-center gap-2 text-gray-300 hover:text-[#00bcd4] transition justify-center sm:justify-start">
+                    <FaGithub size={24} />
+                    <span>GitHub</span>
                   </a>
                 </li>
               </ul>
