@@ -10,7 +10,6 @@ const Header = () => {
   const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Z listy usuwamy "Kontakt", ponieważ będzie osobnym przyciskiem
   const menuItems = [
     { name: "Strona główna", path: "/" },
     { name: "Usługi", path: "/uslugi" },
@@ -19,15 +18,12 @@ const Header = () => {
     { name: "Rekomendacje", path: "/rekomendacje" },
   ];
   
-  // Pełna lista dla menu mobilnego
   const allMenuItems = [...menuItems, { name: "Kontakt", path: "#formularz-kontaktowy" }];
 
   return (
     <header className="fixed top-0 left-0 w-full p-4 z-50">
-      {/* Główny kontener nagłówka */}
       <div className="container mx-auto flex items-center justify-between bg-black/30 backdrop-blur-lg border border-white/20 rounded-full p-2">
         
-        {/* Logo */}
         <Link href="/" className="flex-shrink-0 ml-2">
             <img
               src="/images/logo.webp"
@@ -36,7 +32,6 @@ const Header = () => {
             />
         </Link>
 
-        {/* Nawigacja Desktop (wyśrodkowana) */}
         <nav className="hidden lg:flex items-center gap-2">
           {menuItems.map((item) => (
             <Link
@@ -56,19 +51,21 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Przycisk Kontakt (Desktop) */}
-        <Link href="#formularz-kontaktowy" legacyBehavior>
-          <StarBorder
-            as="button"
-            className="custom-class"
-            color="cyan"
-            speed="5s"
-          >
-            <span className="animate-shine">
-              Kontakt
-            </span>
-        </StarBorder>
-      </Link>
+        {/* Przycisk Kontakt (widoczny tylko na desktopie) */}
+        <div className="hidden lg:block">
+            <Link href="#formularz-kontaktowy" legacyBehavior>
+              <StarBorder
+                as="button"
+                className="custom-class"
+                color="cyan"
+                speed="5s"
+              >
+                <span className="animate-shine">
+                  Kontakt
+                </span>
+            </StarBorder>
+          </Link>
+        </div>
 
         {/* Hamburger – mobile */}
         <button
@@ -88,23 +85,40 @@ const Header = () => {
       {/* Menu mobilne */}
       {isMobileMenuOpen && (
         <nav className="mt-2 flex flex-col space-y-1 bg-black/50 backdrop-blur-lg border border-white/20 rounded-lg text-base p-2 lg:hidden">
-          {allMenuItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`
-                block text-center px-4 py-2 transition-all duration-300 font-semibold rounded-full
-                ${
-                  router.pathname === item.path
-                    ? "bg-[#008080]/90 text-white"
-                    : "text-white hover:bg-white/10"
-                }
-              `}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {allMenuItems.map((item) => {
+            const linkClassName = `
+              block text-center px-4 py-2 transition-all duration-300 font-semibold rounded-full
+              ${
+                router.pathname === item.path
+                  ? "bg-[#008080]/90 text-white"
+                  : "text-white hover:bg-white/10"
+              }
+            `;
+
+            if (item.path.startsWith("#")) {
+              return (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  className={linkClassName}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={item.path} href={item.path} passHref legacyBehavior>
+                <a
+                  className={linkClassName}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>
