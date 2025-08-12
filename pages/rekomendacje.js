@@ -88,7 +88,7 @@ export default function Rekomendacje() {
                   grid-item
                   relative group 
                   cursor-pointer
-                  bg-[#333]
+                  bg-white
                   p-1
                   rounded-md
                   shadow-md

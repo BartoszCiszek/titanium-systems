@@ -1,131 +1,142 @@
 // pages/uslugi/index.js
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRouter } from "next/router"; // Upewnij się, że useRouter jest zaimportowany
+import { FiCheck } from "react-icons/fi";
 
-// Krok 1: Rozbudowujemy listę usług o słowa kluczowe (keywords)
-const servicesList = [
+const servicePackages = [
   {
-    title: "Serwis i modernizacja komputerów",
-    description: "Profesjonalna diagnoza, naprawa i ulepszanie komputerów stacjonarnych oraz laptopów.",
-    link: "/uslugi/serwis-komputerow",
-    delay: 100,
-    keywords: ["składanie komputera", "naprawa", "upgrade", "czyszczenie", "diagnoza", "laptop", "pc", "wymiana części"]
+    name: "START",
+    price: "900 zł",
+    description: "Solidna podstawa dla Twojego nowego komputera.",
+    features: [
+      "Konsultacja i analiza potrzeb",
+      "Dobór podzespołów do budżetu",
+      "Profesjonalny montaż",
+      "Instalacja Windows + sterowników",
+      "Testy stabilności",
+    ],
+    link: "/uslugi/pakiet-start",
+    highlighted: false,
   },
   {
-    title: "Instalacja i konfiguracja systemów",
-    description: "Instalacja systemów Windows, MacOS i Linux wraz z optymalizacją i sterownikami.",
-    link: "/uslugi/instalacja-systemow",
-    delay: 200,
-    keywords: ["windows", "macos", "linux", "instalacja", "reinstalacja", "sterowniki", "formatowanie"]
+    name: "PRO",
+    price: "1400 zł",
+    description: "Dla wymagających graczy i entuzjastów.",
+    features: [
+      "Wszystko z pakietu START",
+      "Optymalizacja BIOS (OC/UV)",
+      "Optymalizacja Windows pod gry/pracę",
+      "Konfiguracja profili wentylatorów",
+      "Testy w docelowych aplikacjach",
+    ],
+    link: "/uslugi/pakiet-pro",
+    highlighted: true,
   },
   {
-    title: "Bezpieczeństwo i odzyskiwanie danych",
-    description: "Backup, przywracanie danych, szyfrowanie dysków i bezpieczne kasowanie informacji.",
-    link: "/uslugi/bezpieczenstwo-danych",
-    delay: 300,
-    keywords: ["backup", "kopia zapasowa", "wirusy", "szyfrowanie", "kasowanie", "bitlocker", "antywirus"]
-  },
-  {
-    title: "Administracja sieciami",
-    description: "Projektowanie, konfiguracja i zabezpieczanie sieci LAN i Wi-Fi w domu i firmie.",
-    link: "/uslugi/administracja-sieciami",
-    delay: 400,
-    keywords: ["sieć", "wifi", "router", "unifi", "ubiquiti", "lan", "internet", "konfiguracja"]
-  },
-  {
-    title: "Serwery NAS (Pamięć Masowa)",
-    description: "Centralizacja i ochrona danych dzięki prywatnej chmurze w Twoim domu lub firmie.",
-    link: "/uslugi/serwery-nas",
-    delay: 500,
-    keywords: ["nas", "serwer plików", "truenas", "synology", "qnap", "backup", "prywatna chmura"]
-  },
-  {
-    title: "Wirtualizacja i Praca Zdalna",
-    description: "Optymalizacja zasobów sprzętowych i tworzenie wydajnych środowisk do pracy zdalnej.",
-    link: "/uslugi/wirtualizacja",
-    delay: 600,
-    keywords: ["wirtualizacja", "maszyny wirtualne", "vmware", "hyper-v", "praca zdalna", "pulpit zdalny"]
-  },
-    {
-    title: "Rozwiązania Chmurowe Microsoft Azure",
-    description: "Skalowalna i bezpieczna infrastruktura dla Twojej firmy dzięki wdrożeniom w chmurze Azure.",
-    link: "/uslugi/rozwiazania-chmurowe-azure",
-    delay: 700,
-    keywords: ["chmura", "azure", "cloud", "migracja", "backup w chmurze", "azure virtual desktop", "avd"]
-  },
-  {
-    title: "Umowy serwisowe (SLA) dla firm",
-    description: "Stała opieka informatyczna z gwarancją czasu reakcji i priorytetowym wsparciem.",
-    link: "/uslugi/umowy-serwisowe",
-    delay: 800,
-    keywords: ["umowa", "sla", "obsługa firm", "wsparcie it", "outsourcing", "dla biznesu"]
+    name: "STUDIO",
+    price: "2000 zł",
+    description: "Usługa 'pod klucz' dla profesjonalistów.",
+    features: [
+      "Wszystko z pakietu PRO",
+      "Instalacja oprogramowania specjalistycznego",
+      "Konfiguracja pluginów i sterowników",
+      "Bezpieczne przeniesienie danych",
+      "Szkolenie z obsługi stacji roboczej",
+    ],
+    link: "/uslugi/pakiet-studio",
+    highlighted: false,
   },
 ];
 
 export default function Uslugi() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
 
-  // Krok 2: Ulepszamy logikę filtrującą, aby przeszukiwała również słowa kluczowe
-  const filteredServices = servicesList.filter((service) => {
-    const term = searchTerm.toLowerCase();
-    // Sprawdzamy, czy fraza pasuje do tytułu, opisu LUB któregokolwiek ze słów kluczowych
-    return (
-      service.title.toLowerCase().includes(term) ||
-      service.description.toLowerCase().includes(term) ||
-      service.keywords.some(keyword => keyword.toLowerCase().includes(term))
-    );
-  });
+  // Funkcja do płynnego przewijania
+  const handleSelectPackage = (e, pkgName) => {
+    e.preventDefault();
+    
+    // Najpierw aktualizujemy URL bez przewijania
+    const targetUrl = `/uslugi?service=${pkgName}#formularz-kontaktowy`;
+    router.push(targetUrl, undefined, { shallow: true, scroll: false });
+
+    // Następnie znajdujemy element i ręcznie inicjujemy płynne przewijanie
+    const formElement = document.getElementById('formularz-kontaktowy');
+    if (formElement) {
+      formElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-white py-12">
       <Head>
-        <title>Usługi IT – Serwis Komputerów, Sieci, Bezpieczeństwo | Titanium Systems</title>
-        <meta name="description" content="Poznaj pełen zakres profesjonalnych usług IT dla klientów indywidualnych i firm w Poznaniu. Serwis, sieci, serwery i więcej." />
-        <meta name="keywords" content="usługi IT Poznań, serwis komputerowy, wsparcie IT, konfiguracja sieci, blog IT" />
+        <title>Oferta - Pakiety usług budowy komputerów | Titanium Systems</title>
+        <meta name="description" content="Poznaj nasze pakiety usług: START, PRO i STUDIO. Oferujemy kompleksową budowę i optymalizację komputerów dla graczy, twórców i profesjonalistów." />
         <link rel="canonical" href="https://titaniumsystems.pl/uslugi" />
       </Head>
 
-      <main className="container mx-auto py-32 px-4">
-        <h1 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-center mb-6">
-          Nasze Usługi
-        </h1>
-        <p data-aos="fade-up" data-aos-delay="100" className="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-          Każdy problem traktujemy jak wyzwanie. Poniżej znajdziesz szczegółowe opisy naszych usług, dzięki którym dowiesz się, jak możemy Ci pomóc.
-        </p>
-
-        <div className="mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <input
-            type="text"
-            placeholder="Wpisz czego szukasz (np. składanie komputera, sieć, wirusy)..."
-            className="w-full p-4 rounded-lg bg-[#333] text-white text-center text-lg outline-none border-2 border-transparent focus:border-[#00bcd4] transition"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+      <main className="container mx-auto py-20 px-4">
+        <div className="text-center mb-16">
+          <h1 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold mb-4">
+            Pakiety dopasowane do Ciebie
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100" className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Wybierz plan, który najlepiej odpowiada Twoim oczekiwaniom. Ceny dotyczą usługi, koszt części ustalamy indywidualnie.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredServices.length > 0 ? (
-            filteredServices.map((service) => (
-              <motion.div
-                key={service.link}
-                data-aos="fade-up"
-                whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 188, 212, 0.3)" }}
-                className="bg-[#333] rounded-xl p-8 shadow-lg flex flex-col"
-              >
-                <h2 className="text-2xl font-bold text-[#00bcd4] mb-3">{service.title}</h2>
-                <p className="text-gray-300 flex-grow">{service.description}</p>
-                <Link href={service.link} className="inline-block mt-6 bg-[#008080] text-white text-center py-2 px-6 rounded-md hover:bg-[#00bcd4] transition">
-                  Czytaj więcej →
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+          {servicePackages.map((pkg, index) => (
+            <div
+              key={pkg.name}
+              data-aos="fade-up"
+              data-aos-delay={100 + index * 100}
+              className={`
+                bg-[#1c1c1c] rounded-xl p-8 flex flex-col h-full
+                border
+                ${pkg.highlighted ? 'border-green-500/50 relative shadow-[0_0_20px_rgba(4,213,103,0.2)]' : 'border-gray-800'}
+              `}
+            >
+              <h2 className="text-2xl font-semibold mb-2">{pkg.name}</h2>
+              <p className="text-4xl font-bold mb-1">od {pkg.price}</p>
+              <p className="text-gray-400 mb-6 flex-grow">{pkg.description}</p>
+
+              <ul className="space-y-3 text-gray-300 mb-8">
+                {pkg.features.map((feature, i) => (
+                  <li key={i} className="flex items-start">
+                    <FiCheck className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto">
+                {/* ZMIANA: Zamiast komponentu Link, używamy zwykłego <a> z onClick */}
+                <a 
+                  href={`/uslugi?service=${pkg.name}#formularz-kontaktowy`}
+                  onClick={(e) => handleSelectPackage(e, pkg.name)}
+                  className={`
+                    block text-center w-full py-3 px-6 rounded-lg font-semibold transition cursor-pointer
+                    ${pkg.highlighted 
+                      ? 'bg-green-500 hover:bg-green-600 text-black' 
+                      : 'bg-gray-700 hover:bg-gray-600 text-white'}
+                  `}
+                >
+                  Wybierz Pakiet
+                </a>
+                
+                <Link 
+                  href={pkg.link}
+                  className="block text-center mt-4 text-sm text-gray-400 hover:text-white transition"
+                >
+                  Dowiedz się więcej
                 </Link>
-              </motion.div>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-10">
-              <p className="text-xl text-gray-400">Nie znaleziono usług pasujących do Twojego wyszukiwania.</p>
+              </div>
             </div>
-          )}
+          ))}
         </div>
       </main>
     </div>
