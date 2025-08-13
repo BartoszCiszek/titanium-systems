@@ -77,7 +77,7 @@ export default function JakWybracZasilacz() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/portfolio2.webp" alt="Zasilacz w obudowie komputera" layout="fill" objectFit="cover" />
+              <Image src="/images/psu.webp" alt="Zasilacz w obudowie komputera" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">
