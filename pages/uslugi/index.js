@@ -1,8 +1,8 @@
 // pages/uslugi/index.js
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router"; // Upewnij się, że useRouter jest zaimportowany
-import { FiCheck } from "react-icons/fi";
+import { useRouter } from "next/router";
+import { FiCheck, FiTool } from "react-icons/fi";
 
 const servicePackages = [
   {
@@ -52,15 +52,11 @@ const servicePackages = [
 export default function Uslugi() {
   const router = useRouter();
 
-  // Funkcja do płynnego przewijania
   const handleSelectPackage = (e, pkgName) => {
     e.preventDefault();
-    
-    // Najpierw aktualizujemy URL bez przewijania
     const targetUrl = `/uslugi?service=${pkgName}#formularz-kontaktowy`;
     router.push(targetUrl, undefined, { shallow: true, scroll: false });
 
-    // Następnie znajdujemy element i ręcznie inicjujemy płynne przewijanie
     const formElement = document.getElementById('formularz-kontaktowy');
     if (formElement) {
       formElement.scrollIntoView({
@@ -74,7 +70,7 @@ export default function Uslugi() {
     <div className="min-h-screen text-white py-12">
       <Head>
         <title>Oferta - Pakiety usług budowy komputerów | Titanium Systems</title>
-        <meta name="description" content="Poznaj nasze pakiety usług: START, PRO i STUDIO. Oferujemy kompleksową budowę i optymalizację komputerów dla graczy, twórców i profesjonalistów." />
+        <meta name="description" content="Poznaj nasze pakiety usług: START, PRO i STUDIO oraz ofertę indywidualną. Oferujemy kompleksową budowę, serwis i optymalizację komputerów." />
         <link rel="canonical" href="https://titaniumsystems.pl/uslugi" />
       </Head>
 
@@ -114,7 +110,6 @@ export default function Uslugi() {
               </ul>
 
               <div className="mt-auto">
-                {/* ZMIANA: Zamiast komponentu Link, używamy zwykłego <a> z onClick */}
                 <a 
                   href={`/uslugi?service=${pkg.name}#formularz-kontaktowy`}
                   onClick={(e) => handleSelectPackage(e, pkg.name)}
@@ -138,6 +133,35 @@ export default function Uslugi() {
             </div>
           ))}
         </div>
+
+        {/* Sekcja Pakietu Indywidualnego */}
+        <div className="max-w-6xl mx-auto mt-16 text-center" data-aos="fade-up">
+            <div className="bg-[#1c1c1c] rounded-xl p-8 border border-gray-800">
+                <FiTool className="mx-auto text-4xl mb-4 text-[#00bcd4]" />
+                <h2 className="text-3xl font-bold mb-4">Potrzebujesz czegoś innego?</h2>
+                <p className="text-lg text-gray-400 mb-6 max-w-3xl mx-auto">
+                Masz już złożony komputer i potrzebujesz konkretnej usługi, jak serwis, optymalizacja OC/UV, czy modernizacja? A może masz specyficzne wymagania, które wykraczają poza standardowe pakiety?
+                </p>
+                
+                {/* Zaktualizowana sekcja przycisków */}
+                <div className="mt-auto">
+                    <a 
+                      href={`/uslugi?service=Indywidualny#formularz-kontaktowy`}
+                      onClick={(e) => handleSelectPackage(e, "Indywidualny")}
+                      className="block text-center w-full max-w-xs mx-auto py-3 px-6 rounded-lg font-semibold transition cursor-pointer bg-gray-700 hover:bg-gray-600 text-white"
+                    >
+                      Wybierz Pakiet
+                    </a>
+                    <Link 
+                        href="/uslugi/pakiet-indywidualny"
+                        className="block text-center mt-4 text-sm text-gray-400 hover:text-white transition"
+                    >
+                        Dowiedz się więcej
+                    </Link>
+                </div>
+            </div>
+        </div>
+
       </main>
     </div>
   );

@@ -9,7 +9,7 @@ const ContactFormSection = () => {
     name: '',
     email: '',
     message: '',
-    service: '', // Dodajemy pole na nazwę usługi
+    service: '', // Pole na nazwę usługi
   });
   const [isPolicyAccepted, setIsPolicyAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,7 +98,7 @@ const ContactFormSection = () => {
             <>
               <h3 className="text-xl font-bold mb-4">Napisz do nas, a my zajmiemy się resztą!</h3>
               <form onSubmit={handleSubmit}>
-                {/* Pole pokazujące wybraną usługę */}
+                {/* Pole pokazujące wybraną usługę, jeśli została wybrana */}
                 {formData.service && (
                   <div className="w-full p-3 mb-4 rounded-md bg-[#2a2a2a] border border-gray-600">
                     <p className="text-gray-400">Wybrany pakiet: <span className="font-bold text-white">{formData.service}</span></p>
