@@ -77,7 +77,7 @@ export default function CzyWartoNas() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/serwery-nas.webp" alt="Serwer NAS podłączony do chmury" layout="fill" objectFit="cover" />
+              <Image src="/images/nas.webp" alt="Serwer NAS podłączony do chmury" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

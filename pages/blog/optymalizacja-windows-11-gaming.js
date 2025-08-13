@@ -63,7 +63,7 @@ export default function OptymalizacjaWindows11() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/windows.webp" alt="Logo Windows 11" layout="fill" objectFit="cover" />
+              <Image src="/images/windows11-game.webp" alt="Logo Windows 11" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

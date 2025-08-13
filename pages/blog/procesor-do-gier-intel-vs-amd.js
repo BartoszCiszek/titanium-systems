@@ -77,7 +77,7 @@ export default function ProcesorIntelVsAmd() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/hero.webp" alt="Wnętrze komputera z podświetlonym procesorem" layout="fill" objectFit="cover" />
+              <Image src="/images/intel-vs-amd.webp" alt="Wnętrze komputera z podświetlonym procesorem" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

@@ -77,7 +77,7 @@ export default function JakPrzyspieszycKomputer() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/przyspieszanie-komputera.webp" alt="Wykres wydajności komputera po optymalizacji" layout="fill" objectFit="cover" />
+              <Image src="/images/przyspieszenie-komputera.webp" alt="Wykres wydajności komputera po optymalizacji" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

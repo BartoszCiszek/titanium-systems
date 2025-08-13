@@ -77,7 +77,7 @@ export default function StacjaRoboczaWideo4K() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/portfolio3.webp" alt="Profesjonalna stacja robocza do wideo" layout="fill" objectFit="cover" />
+              <Image src="/images/stacja-robocza.webp" alt="Profesjonalna stacja robocza do wideo" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

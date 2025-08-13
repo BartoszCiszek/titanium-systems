@@ -92,7 +92,7 @@ export default function PoradnikOCUV() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/oc-uv-komputera.webp" alt="Schemat Overclockingu i Undervoltingu" layout="fill" objectFit="cover" />
+              <Image src="/images/overclocking-undervolting.webp" alt="Schemat Overclockingu i Undervoltingu" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

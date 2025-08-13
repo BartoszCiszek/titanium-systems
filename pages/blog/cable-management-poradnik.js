@@ -69,7 +69,7 @@ export default function CableManagementPoradnik() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/hero.webp" alt="Schludnie ułożone kable wewnątrz komputera" layout="fill" objectFit="cover" />
+              <Image src="/images/cable-management.webp" alt="Schludnie ułożone kable wewnątrz komputera" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

@@ -77,7 +77,7 @@ export default function PamiecRamDdr4VsDdr5() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/hero.webp" alt="Podświetlone kości pamięci RAM na płycie głównej" layout="fill" objectFit="cover" />
+              <Image src="/images/ddr4-vs-ddr5.webp" alt="Podświetlone kości pamięci RAM na płycie głównej" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

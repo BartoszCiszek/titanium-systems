@@ -77,7 +77,7 @@ export default function SerweryDomoweZastosowania() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/backup-danych.webp" alt="Serwer połączony z chmurą i folderami" layout="fill" objectFit="cover" />
+              <Image src="/images/serwery-domowe.webp" alt="Serwer połączony z chmurą i folderami" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

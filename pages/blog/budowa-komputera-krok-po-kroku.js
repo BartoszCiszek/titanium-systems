@@ -74,7 +74,7 @@ export default function BudowaKomputeraKrokPoKroku() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/skladanie-komputerow.webp" alt="Osoba składająca komputer" layout="fill" objectFit="cover" />
+              <Image src="/images/budowa-komputera.webp" alt="Osoba składająca komputer" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

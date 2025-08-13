@@ -64,7 +64,7 @@ export default function BiosUefiPoradnik() {
             </header>
             
             <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-              <Image src="/images/realizacja4_3.webp" alt="Interfejs UEFI BIOS" layout="fill" objectFit="cover" />
+              <Image src="/images/bios-uefi.webp" alt="Interfejs UEFI BIOS" layout="fill" objectFit="cover" />
             </div>
 
             <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-8">

@@ -27,7 +27,7 @@ const PakietIndywidualny = () => {
           <p className="text-lg text-center text-gray-300 mb-12">Usługi idealnie dopasowane do Twoich unikalnych potrzeb.</p>
           
           <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-            <Image src="/images/wsparcie-zdalne-helpdesk.webp" alt="Indywidualne wsparcie techniczne" layout="fill" objectFit="cover" />
+            <Image src="/images/indywidualny.webp" alt="Indywidualne wsparcie techniczne" layout="fill" objectFit="cover" />
           </div>
 
           <div>
