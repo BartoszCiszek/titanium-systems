@@ -1,5 +1,6 @@
 // components/ContactFormSection.js
-import { useState, useEffect } from 'react'; // Dodano import useEffect
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import GlareHover from './GlareHover';
 
@@ -8,22 +9,31 @@ const ContactFormSection = () => {
     name: '',
     email: '',
     message: '',
+    service: '', // Pole na nazwę usługi
   });
   const [isPolicyAccepted, setIsPolicyAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'success', 'error'
+  const [formStatus, setFormStatus] = useState('idle');
 
-  // NOWA CZĘŚĆ: Efekt do resetowania statusu formularza po 5 sekundach
+  const router = useRouter();
+  const { service } = router.query;
+
   useEffect(() => {
-    if (formStatus === 'success') {
+    // Reset statusu formularza po 5 sekundach
+    if (formStatus === 'success' || formStatus === 'error') {
       const timer = setTimeout(() => {
         setFormStatus('idle');
-      }, 5000); // 5000 milisekund = 5 sekund
-
-      // Wyczyszczenie timera, jeśli komponent zostanie odmontowany
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [formStatus]);
+  
+  useEffect(() => {
+    // Ustawiamy usługę w formularzu, jeśli jest w URL
+    if (typeof service === 'string') {
+      setFormData(prev => ({ ...prev, service: `Pakiet ${service}` }));
+    }
+  }, [service]);
 
 
   const handleChange = (e) => {
@@ -48,13 +58,15 @@ const ContactFormSection = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, service: 'Zapytanie z sekcji kontaktowej' }),
+        body: JSON.stringify(formData), // Wysyłamy całe dane z formularza
       });
 
       if (response.ok) {
         setFormStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', service: '' });
         setIsPolicyAccepted(false);
+        // Czyścimy parametr z URL po wysłaniu
+        router.push('/uslugi#formularz-kontaktowy', undefined, { shallow: true });
       } else {
         throw new Error('Odpowiedź serwera nie była pomyślna.');
       }
@@ -67,27 +79,31 @@ const ContactFormSection = () => {
   };
 
   return (
-    <section id="formularz-kontaktowy" className="w-full text-white py-16 px-4">
+    <section id="formularz-kontaktowy" className="w-full text-white py-16 px-4 scroll-mt-20">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-        {/* Lewa strona: Dane kontaktowe */}
         <div className="text-center md:text-left md:pl-16 lg:pl-24">
             <h2 className="text-2xl font-bold mb-4 text-[#00bcd4]">Kontakt</h2>
             <p className="text-lg mb-2">📞 <a href="tel:+48603832422" className="hover:text-[#00bcd4] transition">+48 603 832 422</a></p>
             <p className="text-lg">📧 <a href="mailto:bartosz.ciszek@titaniumsystems.pl" className="hover:text-[#00bcd4] transition">bartosz.ciszek@titaniumsystems.pl</a></p>
         </div>
 
-        {/* Prawa strona: Formularz lub komunikat o statusie */}
         <div>
           {formStatus === 'success' ? (
             <div className="text-center p-8 bg-[#212121] rounded-lg">
               <h3 className="text-2xl font-bold text-green-400 mb-4">Dziękujemy!</h3>
-              <p className="text-lg text-gray-300">Twoja wiadomość została wysłana pomyślnie. Skontaktujemy się z Tobą wkrótce.</p>
+              <p className="text-lg text-gray-300">Twoja wiadomość została wysłana. Odpowiemy wkrótce.</p>
             </div>
           ) : (
             <>
-              <h3 className="text-xl font-bold mb-4">Napisz, a my zajmiemy się resztą!</h3>
+              <h3 className="text-xl font-bold mb-4">Napisz do nas, a my zajmiemy się resztą!</h3>
               <form onSubmit={handleSubmit}>
+                {/* Pole pokazujące wybraną usługę, jeśli została wybrana */}
+                {formData.service && (
+                  <div className="w-full p-3 mb-4 rounded-md bg-[#2a2a2a] border border-gray-600">
+                    <p className="text-gray-400">Wybrany pakiet: <span className="font-bold text-white">{formData.service}</span></p>
+                  </div>
+                )}
                 <input
                   type="text"
                   name="name"
@@ -148,7 +164,7 @@ const ContactFormSection = () => {
                   </button>
                 </GlareHover>
                 {formStatus === 'error' && (
-                  <p className="text-red-500 mt-4 text-center">Wystąpił błąd podczas wysyłania. Proszę spróbować ponownie.</p>
+                  <p className="text-red-500 mt-4 text-center">Błąd wysyłania. Spróbuj ponownie.</p>
                 )}
               </form>
             </>

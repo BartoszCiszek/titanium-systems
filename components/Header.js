@@ -16,6 +16,7 @@ const Header = () => {
     { name: "Realizacje", path: "/realizacje" },
     { name: "FAQ", path: "/faq" },
     { name: "Rekomendacje", path: "/rekomendacje" },
+    { name: "Blog", path: "/blog" },
   ];
   
   const allMenuItems = [...menuItems, { name: "Kontakt", path: "#formularz-kontaktowy" }];

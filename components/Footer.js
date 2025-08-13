@@ -14,12 +14,15 @@ const Footer = () => {
   ];
 
   const offerLinks = [
-    { name: 'Serwis i modernizacja komputerów', path: '/uslugi/serwis-komputerow' },
-    { name: 'Instalacja systemów', path: '/uslugi/instalacja-systemow' },
-    { name: 'Bezpieczeństwo i dane', path: '/uslugi/bezpieczenstwo-danych' },
-    { name: 'Administracja sieciami', path: '/uslugi/administracja-sieciami' },
-    { name: 'Wirtualizacja', path: '/uslugi/wirtualizacja' },
-    { name: 'Umowy serwisowe (SLA)', path: '/uslugi/umowy-serwisowe' },
+    { name: 'Pakiet START', path: '/uslugi/pakiet-start' },
+    { name: 'Pakiet PRO', path: '/uslugi/pakiet-pro' },
+    { name: 'Pakiet STUDIO', path: '/uslugi/pakiet-studio' },
+    { name: 'Wszystkie pakiety', path: '/uslugi' },
+  ];
+  
+  // Nowa sekcja dla Bloga
+  const blogLinks = [
+    { name: 'Artykuły i poradniki', path: '/blog' },
   ];
 
   return (
@@ -33,12 +36,11 @@ const Footer = () => {
             <Link href="/" className="mb-4">
               <Image src="/images/logo.webp" alt="Titanium Systems Logo" width={250} height={40} />
             </Link>
-            <p className="text-gray-400 mt-2 text-sm animate-shine">Solid IT. No surprises.</p>
-            <p className="text-gray-400 text-sm animate-shine">We handle the technology; you drive the business.</p>
+            <p className="text-gray-400 mt-2 text-sm animate-shine">Moc dopasowana do Ciebie.</p>
           </div>
 
-          {/* Prawa strona: Kontener na trzy kolumny z linkami */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
+          {/* Prawa strona: Kontener na CZTERY kolumny z linkami */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center sm:text-left">
             <div>
               <h3 className="text-lg font-bold mb-4 text-white animate-shine">Szybkie linki</h3>
               <ul className="space-y-2 text-sm">
@@ -56,6 +58,19 @@ const Footer = () => {
               <h3 className="text-lg font-bold mb-4 text-white animate-shine">Oferta</h3>
               <ul className="space-y-2 text-sm">
                 {offerLinks.map((item) => (
+                  <li key={item.path}>
+                    <Link href={item.path} className="text-gray-300 hover:text-[#00bcd4] transition">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold mb-4 text-white animate-shine">Blog</h3>
+              <ul className="space-y-2 text-sm">
+                {blogLinks.map((item) => (
                   <li key={item.path}>
                     <Link href={item.path} className="text-gray-300 hover:text-[#00bcd4] transition">
                       {item.name}

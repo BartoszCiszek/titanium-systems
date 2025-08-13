@@ -2,33 +2,33 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import gsap from "gsap";
-import { FiChevronDown } from "react-icons/fi"; // Dodano nową ikonę
+import { FiChevronDown } from "react-icons/fi";
 
 const faqData = [
   {
-    question: "Jak mogę zamówić usługę IT?",
+    question: "Czym różnią się pakiety START, PRO i STUDIO?",
     answer:
-      "Skontaktuj się przez e-mail, telefon lub formularz kontaktowy – odpowiem jak najszybciej i zaproponuję konkretny termin realizacji usługi.",
+      "Pakiet START to solidna podstawa: dobór części, montaż i instalacja systemu. Pakiet PRO dodaje zaawansowaną optymalizację wydajności (OC/UV) i testy w grach. Pakiet STUDIO to usługa 'pod klucz' dla profesjonalistów, obejmująca instalację specjalistycznego oprogramowania i przeniesienie danych.",
   },
   {
-    question: "Czy działasz tylko w Poznaniu?",
+    question: "Czy podane ceny pakietów zawierają koszt części?",
     answer:
-      "Głównie obsługuję klientów z Poznania, Środy Wielkopolskiej i okolic, ale możliwa jest współpraca również zdalnie lub na terenie całej Wielkopolski.",
+      "Nie, podane ceny są kosztem usługi montażu, konfiguracji i optymalizacji. Koszt podzespołów jest ustalany indywidualnie na podstawie Twoich potrzeb i budżetu.",
   },
   {
-    question: "Czy odzyskujesz dane z uszkodzonych dysków?",
+    question: "Jak wygląda proces współpracy?",
     answer:
-      "Tak, oferuję odzyskiwanie danych z dysków HDD, SSD oraz pendrive’ów – zarówno przy uszkodzeniach logicznych, jak i częściowych fizycznych.",
+      "Zaczynamy od bezpłatnej konsultacji, aby poznać Twoje potrzeby. Następnie przedstawiamy propozycję konfiguracji i wycenę. Po akceptacji zamawiamy części i przystępujemy do montażu i testów. Na końcu dostarczamy gotowy, zoptymalizowany komputer.",
   },
   {
-    question: "Czy mogę zlecić konfigurację sieci w firmie?",
+    question: "Czy oferujecie gwarancję na swoje usługi?",
     answer:
-      "Tak, konfiguruję sieci LAN, Wi-Fi oraz routery (również VLAN, Cały ekosystem UniFi). Dostosowuję wszystko do potrzeb firmy lub domu.",
+      "Tak, na wykonaną przez nas usługę konfiguracji i optymalizacji (ustawienia BIOS/UEFI, profile OC/UV) udzielamy 90-dniowej gwarancji. Gwarancja nie obejmuje usterek sprzętowych, które są realizowane w ramach gwarancji producenta.",
   },
   {
-    question: "Czy wystawiasz faktury VAT?",
+    question: "Czy mogę dostarczyć własne części?",
     answer:
-      "Tak, wystawiam faktury VAT.",
+      "Oczywiście. Możemy zbudować komputer z dostarczonych przez Ciebie komponentów, oferując usługę profesjonalnego montażu i optymalizacji w ramach wybranego pakietu.",
   },
 ];
 
@@ -59,14 +59,14 @@ export default function FAQ() {
   return (
     <div className="min-h-screen text-white flex flex-col">
       <Head>
-        <title>FAQ – Usługi IT Poznań | Najczęstsze pytania | Titanium Systems</title>
+        <title>FAQ – Budowa Komputerów na Zamówienie | Titanium Systems</title>
         <meta
           name="description"
-          content="Najczęściej zadawane pytania o usługi IT w Poznaniu. Sprawdź szczegóły oferty, dojazd, rachunki, konfigurację sieci i odzyskiwanie danych."
+          content="Najczęściej zadawane pytania dotyczące budowy personalizowanych komputerów. Sprawdź informacje o pakietach, cenach, gwarancji i procesie współpracy."
         />
         <meta
           name="keywords"
-          content="FAQ IT Poznań, pytania IT, odzyskiwanie danych, konfiguracja sieci, usługi informatyczne"
+          content="FAQ komputery, pytania o składanie PC, gwarancja na komputer, pakiety usług, proces zamówienia"
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -95,7 +95,7 @@ export default function FAQ() {
               className={`faq-item mb-4 rounded-lg overflow-hidden shadow-md`}
             >
               <button
-                className="faq-question w-full px-4 py-3 bg-[#008080] hover:bg-[#3d3d3d] text-white font-semibold flex justify-between items-center transition-colors"
+                className="faq-question w-full px-4 py-3 bg-[#008080] hover:bg-[#3d3d3d] text-white font-semibold flex justify-between items-center transition-colors text-left"
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}

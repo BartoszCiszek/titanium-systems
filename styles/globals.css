@@ -90,7 +90,6 @@ main {
 }
 
 /* Animacja rysowania pionowej kreski – drawLine */
-/* Ta animacja "rysuje" kreskę od dołu do góry */
 @keyframes drawLine {
   from {
     height: 0;
@@ -102,7 +101,6 @@ main {
   }
 }
 
-/* Klasa pionowej kreski – animacja zostanie uruchomiona przez AOS, gdy element wejdzie do widoku */
 .vertical-line {
   height: 0;
   border-left: 1px solid white;
@@ -117,62 +115,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* From Uiverse.io by Shoh2008 */ 
-.loader {
-  position: relative;
-  border-style: solid;
-  box-sizing: border-box;
-  border-width: 40px 60px 30px 60px;
-  border-color: #3760C9 #96DDFC #96DDFC #36BBF7;
-  animation: envFloating 1s ease-in infinite alternate;
-}
-
-.loader:after {
-  content: "";
-  position: absolute;
-  right: 62px;
-  top: -40px;
-  height: 70px;
-  width: 50px;
-  background-image: linear-gradient(#fff 45px, transparent 0),
-            linear-gradient(#fff 45px, transparent 0),
-            linear-gradient(#fff 45px, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 30px 4px;
-  background-position: 0px 11px , 8px 35px, 0px 60px;
-  animation: envDropping 0.75s linear infinite;
-}
-
-@keyframes envFloating {
-  0% {
-    transform: translate(-2px, -5px)
-  }
-
-  100% {
-    transform: translate(0, 5px)
-  }
-}
-
-@keyframes envDropping {
-  0% {
-    background-position: 100px 11px , 115px 35px, 105px 60px;
-    opacity: 1;
-  }
-
-  50% {
-    background-position: 0px 11px , 20px 35px, 5px 60px;
-  }
-
-  60% {
-    background-position: -30px 11px , 0px 35px, -10px 60px;
-  }
-
-  75%, 100% {
-    background-position: -30px 11px , -30px 35px, -30px 60px;
-    opacity: 0;
-  }
-}
-
 @keyframes shine {
   to {
     background-position-x: -200%;
@@ -181,38 +123,15 @@ html {
 
 /* Klasa pomocnicza dla błyszczącego tekstu */
 .animate-shine {
-  /* Kolorystyka gradientu - możesz ją dostosować */
   background: linear-gradient(110deg, #ffffff 8%, #838383 18%, #ffffff 33%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 5s linear infinite; /* Czas trwania animacji */
+  animation: shine 5s linear infinite;
 }
 
 .text-shadow-custom {
   text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.7);
 }
 
-.back-button {
-  position: fixed;
-  top: 120px; /* Odstęp od góry */
-  left: 20px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 128, 128, 0.8); /* Kolor Teal z przezroczystością */
-  color: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #00bcd4; /* Jaśniejszy kolor po najechaniu */
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
-}
