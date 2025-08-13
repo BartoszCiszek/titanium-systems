@@ -93,7 +93,7 @@ export default function Uslugi() {
               className={`
                 bg-[#1c1c1c] rounded-xl p-8 flex flex-col h-full
                 border
-                ${pkg.highlighted ? 'border-green-500/50 relative shadow-[0_0_20px_rgba(4,213,103,0.2)]' : 'border-gray-800'}
+                ${pkg.highlighted ? 'border-cyan-500/50 relative shadow-[0_0_20px_rgba(4,213,103,0.2)]' : 'border-gray-800'}
               `}
             >
               <h2 className="text-2xl font-semibold mb-2">{pkg.name}</h2>
@@ -103,7 +103,7 @@ export default function Uslugi() {
               <ul className="space-y-3 text-gray-300 mb-8">
                 {pkg.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <FiCheck className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                    <FiCheck className="text-cyan-400 mr-3 mt-1 flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -116,7 +116,7 @@ export default function Uslugi() {
                   className={`
                     block text-center w-full py-3 px-6 rounded-lg font-semibold transition cursor-pointer
                     ${pkg.highlighted 
-                      ? 'bg-green-500 hover:bg-green-600 text-black' 
+                      ? 'bg-cyan-500 hover:bg-cyan-600 text-black' 
                       : 'bg-gray-700 hover:bg-gray-600 text-white'}
                   `}
                 >

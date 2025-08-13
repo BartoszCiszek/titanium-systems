@@ -251,7 +251,7 @@ export default function Blog() {
                 <p className="text-gray-400 mb-6">{post.description}</p>
                 <Link
                   href={post.link}
-                  className="flex items-center gap-2 mt-auto text-green-400 font-semibold hover:text-green-300 transition"
+                  className="flex items-center gap-2 mt-auto text-cyan-400 font-semibold hover:text-cyan-300 transition"
                 >
                   Czytaj więcej <FiArrowRight />
                 </Link>
