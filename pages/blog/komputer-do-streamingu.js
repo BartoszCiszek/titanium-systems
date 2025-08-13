@@ -92,8 +92,8 @@ export default function KomputerDoStreamingu() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Marzysz o karierze streamera? Zbudujemy dla Ciebie maszynę, która sprosta temu zadaniu.</p>
-                <Link href="/uslugi/pakiet-pro" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Sprawdź pakiety PRO i STUDIO
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Zbuduj z nami maszynę do streamingu!
                 </Link>
               </div>
             </div>

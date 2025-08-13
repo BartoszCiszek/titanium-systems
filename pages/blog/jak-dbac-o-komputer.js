@@ -83,8 +83,8 @@ export default function JakDbacOKomputer() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Twój komputer wymaga profesjonalnego serwisu? Jesteśmy do Twojej dyspozycji!</p>
-                <Link href="/uslugi/serwis-komputerow" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Sprawdź naszą ofertę serwisową
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Zleć nam profesjonalny serwis!
                 </Link>
               </div>
             </div>

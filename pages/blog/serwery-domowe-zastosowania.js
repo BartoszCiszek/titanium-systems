@@ -117,8 +117,8 @@ export default function SerweryDomoweZastosowania() {
 
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Chcesz stworzyć własny serwer domowy, ale nie wiesz od czego zacząć? Pomożemy Ci wybrać i skonfigurować idealne rozwiązanie.</p>
-                <Link href="/uslugi/serwery-nas" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Dowiedz się więcej o serwerach NAS
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Skonsultuj budowę swojego serwera domowego!
                 </Link>
               </div>
             </div>

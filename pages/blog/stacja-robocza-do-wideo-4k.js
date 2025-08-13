@@ -112,8 +112,8 @@ export default function StacjaRoboczaWideo4K() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Zbuduj z nami stację roboczą, która pozwoli Ci skupić się na kreatywności, a nie na walce ze sprzętem.</p>
-                <Link href="/uslugi/pakiet-studio" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Odkryj nasz Pakiet STUDIO
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Zbuduj z nami swoją stację roboczą!
                 </Link>
               </div>
             </div>

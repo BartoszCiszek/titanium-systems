@@ -93,8 +93,8 @@ export default function OptymalizacjaWindows11() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Chcesz mieć system idealnie skonfigurowany pod gry? To standard w naszym Pakiecie PRO.</p>
-                <Link href="/uslugi/pakiet-pro" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Dowiedz się więcej o Pakiecie PRO
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Zamów komputer zoptymalizowany pod gry!
                 </Link>
               </div>
             </div>

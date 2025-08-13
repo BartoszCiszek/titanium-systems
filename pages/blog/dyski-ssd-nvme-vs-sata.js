@@ -116,8 +116,8 @@ export default function DyskiSsdNvmeVsSata() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Pomożemy Ci skonfigurować optymalny zestaw dysków dla Twoich potrzeb.</p>
-                <Link href="/uslugi" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Zapytaj o wycenę
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Skonfiguruj z nami idealny zestaw dysków!
                 </Link>
               </div>
             </div>

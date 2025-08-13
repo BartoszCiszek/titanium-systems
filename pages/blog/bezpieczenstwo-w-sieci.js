@@ -100,8 +100,8 @@ export default function BezpieczenstwoWSieci() {
               
               <div className="text-center mt-16 border-t border-gray-700 pt-8">
                 <p className="text-lg mb-4">Potrzebujesz pomocy w zabezpieczeniu swojego komputera lub sieci firmowej?</p>
-                <Link href="/uslugi/bezpieczenstwo-danych" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
-                    Sprawdź nasze usługi bezpieczeństwa
+                <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
+                    Zabezpiecz z nami swoje dane!
                 </Link>
               </div>
             </div>
