@@ -1,6 +1,7 @@
 // pages/uslugi/pakiet-start.js
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/legacy/image";
 import { FiCheck } from "react-icons/fi";
 
 const PakietStart = () => {
@@ -22,12 +23,16 @@ const PakietStart = () => {
       <main className="container mx-auto py-32 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 text-[#00bcd4]">Pakiet START</h1>
-          <p className="text-lg text-center text-gray-300 mb-8">Solidny komputer w idealnie dopasowanym budżecie.</p>
-          
-          <div className="bg-[#2a2a2a] rounded-xl p-8 shadow-lg">
+          <p className="text-lg text-center text-gray-300 mb-12">Solidny komputer w idealnie dopasowanym budżecie.</p>
+
+          <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
+            <Image src="/images/start.webp" alt="Składanie komputera" layout="fill" objectFit="cover" />
+          </div>
+
+          <div>
             <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 900 zł</p>
-            <h2 className="text-2xl font-semibold text-white mb-4">Zakres usługi:</h2>
-            <ul className="space-y-3 text-gray-300">
+            <h2 className="text-2xl font-semibold text-white mb-4">Co wchodzi w skład pakietu?</h2>
+            <ul className="space-y-3 text-gray-300 mb-8">
               {features.map((feature, i) => (
                 <li key={i} className="flex items-start">
                   <FiCheck className="text-green-400 mr-3 mt-1 flex-shrink-0" size={20} />
@@ -35,6 +40,23 @@ const PakietStart = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="prose prose-invert lg:prose-xl max-w-none text-gray-300 space-y-6">
+              <h3 className="text-2xl font-bold text-white mt-10">Dla kogo jest ten pakiet?</h3>
+              <p>Pakiet START to idealne rozwiązanie dla osób, które potrzebują nowego, niezawodnego komputera, ale nie chcą zagłębiać się w skomplikowane detale techniczne. Jest to doskonały wybór dla:</p>
+              <ul className="list-disc list-inside">
+                <li><strong>Użytkowników domowych:</strong> do przeglądania internetu, multimediów i podstawowych zadań.</li>
+                <li><strong>Uczniów i studentów:</strong> do nauki, pisania prac i zdalnych zajęć.</li>
+                <li><strong>Graczy z ograniczonym budżetem:</strong> którzy chcą zacząć przygodę z gamingiem i potrzebują solidnej bazy do przyszłej rozbudowy.</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold text-white mt-10">Jak wygląda proces?</h3>
+              <p>Cały proces jest prosty i przejrzysty. Zaczynamy od rozmowy, podczas której poznajemy Twoje oczekiwania i maksymalny budżet na podzespoły. Następnie, na podstawie tych informacji, tworzymy listę komponentów, która gwarantuje najlepszy stosunek ceny do wydajności. Po Twojej akceptacji zamawiamy części i przystępujemy do profesjonalnego montażu, dbając o estetykę i optymalny przepływ powietrza w obudowie. Na koniec instalujemy system operacyjny wraz ze wszystkimi sterownikami i przeprowadzamy testy, aby mieć pewność, że komputer jest stabilny i gotowy do pracy od zaraz.</p>
+
+              <h3 className="text-2xl font-bold text-white mt-10">Dlaczego warto?</h3>
+              <p>Wybierając Pakiet START, oszczędzasz czas i nerwy. Zamiast spędzać godziny na porównywaniu setek podzespołów, dostajesz od nas gotową propozycję, która jest wynikiem naszego doświadczenia i wiedzy. Masz pewność, że wszystkie komponenty będą ze sobą kompatybilne, a całość zostanie złożona przez profesjonalistę. To inwestycja w spokój i sprzęt, który posłuży Ci przez lata.</p>
+            </div>
+
             <div className="text-center mt-10">
               <Link href="#formularz-kontaktowy" className="bg-[#008080] text-white text-lg font-bold py-3 px-8 rounded-md hover:bg-[#00bcd4] transition">
                   Zapytaj o wycenę

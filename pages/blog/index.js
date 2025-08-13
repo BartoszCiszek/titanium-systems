@@ -1,4 +1,4 @@
-// pages/blog.js
+// pages/blog/index.js
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ const blogPosts = [
   {
     title: "Jak przyspieszyć komputer w 5 krokach? Poradnik 2025",
     description: "Twój komputer działa wolno? Poznaj sprawdzone i skuteczne metody na optymalizację systemu i sprzętu, które przywrócą mu dawną prędkość.",
-    link: "/blog/jak-przyspieszyc-komputer", // Przykładowy link
+    link: "/blog/jak-przyspieszyc-komputer",
     category: "Optymalizacja",
   },
   {
@@ -24,7 +24,110 @@ const blogPosts = [
     link: "/blog/czy-warto-nas",
     category: "Sprzęt",
   },
+  {
+    title: "Wybór idealnej karty graficznej w 2025 – Poradnik",
+    description: "Przewodnik po najnowszych kartach graficznych od NVIDIA i AMD. Pomagamy wybrać najlepszy model do gier, pracy kreatywnej i AI, dopasowany do Twojego budżetu.",
+    link: "/blog/wybor-karty-graficznej-2025",
+    category: "Sprzęt",
+  },
+  {
+    title: "Procesor do gier: Intel czy AMD w 2025 roku?",
+    description: "Szczegółowa analiza i porównanie najnowszych procesorów Intela i AMD. Dowiedz się, który CPU oferuje najlepszą wydajność w grach i zastosowaniach profesjonalnych.",
+    link: "/blog/procesor-do-gier-intel-vs-amd",
+    category: "Porównania",
+  },
+  {
+    title: "Jak dbać o komputer? Kompletny przewodnik po czyszczeniu",
+    description: "Praktyczne porady dotyczące konserwacji i czyszczenia komputera, które pomogą utrzymać niskie temperatury, wysoką wydajność i przedłużą żywotność podzespołów.",
+    link: "/blog/jak-dbac-o-komputer",
+    category: "Poradniki",
+  },
+  {
+    title: "Pamięć RAM – Wszystko o DDR4 i DDR5",
+    description: "Wszystko, co musisz wiedzieć o pamięci RAM. Wyjaśniamy różnice między DDR4 a DDR5, profile XMP/EXPO i jak dobrać idealne moduły do swojego zestawu.",
+    link: "/blog/pamiec-ram-ddr4-vs-ddr5",
+    category: "Sprzęt",
+  },
+  {
+    title: "Chłodzenie komputera: Powietrzem czy cieczą (AIO)?",
+    description: "Analizujemy wady i zalety chłodzenia powietrznego oraz All-In-One (AIO). Pomagamy zdecydować, które rozwiązanie będzie najlepsze dla Twojego procesora.",
+    link: "/blog/chlodzenie-powietrzne-vs-aio",
+    category: "Porównania",
+  },
+  {
+    title: "Zasilacz (PSU) – Cichy bohater Twojego PC",
+    description: "Jak wybrać odpowiedni zasilacz? Omawiamy certyfikaty sprawności (80 Plus), moc, modularność i kluczowe zabezpieczenia, które chronią Twój sprzęt.",
+    link: "/blog/jak-wybrac-zasilacz-psu",
+    category: "Sprzęt",
+  },
+  {
+    title: "Budowa komputera krok po kroku – Poradnik 2025",
+    description: "Kompleksowy przewodnik, który przeprowadzi Cię przez cały proces składania komputera – od montażu procesora po zarządzanie kablami.",
+    link: "/blog/budowa-komputera-krok-po-kroku",
+    category: "Poradniki",
+  },
+  {
+    title: "Optymalizacja Windows 11 pod kątem gier",
+    description: "Poznaj ukryte triki i ustawienia w Windows 11, które pozwolą Ci zmaksymalizować liczbę klatek na sekundę i zminimalizować opóźnienia w grach.",
+    link: "/blog/optymalizacja-windows-11-gaming",
+    category: "Oprogramowanie",
+  },
+  {
+    title: "Diagnostyka problemów z PC – Co robić, gdy komputer nie działa?",
+    description: "Praktyczne wskazówki, jak samodzielnie zdiagnozować najczęstsze usterki komputera – od problemów z uruchamianiem po niestabilność systemu.",
+    link: "/blog/diagnostyka-problemow-z-komputerem",
+    category: "Serwis",
+  },
+  {
+    title: "Bezpieczeństwo w sieci: Jak chronić swoje dane?",
+    description: "Niezbędne porady dotyczące ochrony komputera i danych osobowych przed wirusami, phishingiem i innymi zagrożeniami online.",
+    link: "/blog/bezpieczenstwo-w-sieci",
+    category: "Bezpieczeństwo",
+  },
+  {
+    title: "Wirtualna Rzeczywistość (VR) – Jaki komputer jest potrzebny?",
+    description: "Kompletny przewodnik po wymaganiach sprzętowych dla VR. Dowiedz się, jaką kartę graficzną i procesor wybrać, aby cieszyć się płynną rozgrywką.",
+    link: "/blog/jaki-komputer-do-vr",
+    category: "Sprzęt",
+  },
+  {
+    title: "Streaming na Twitch i YouTube – Konfiguracja PC",
+    description: "Jak zbudować i skonfigurować komputer do streamowania gier? Omawiamy kluczowe komponenty i ustawienia oprogramowania OBS Studio.",
+    link: "/blog/komputer-do-streamingu",
+    category: "Poradniki",
+  },
+  {
+    title: "Stacja robocza do edycji wideo 4K – Poradnik",
+    description: "Budujemy optymalną stację roboczą do montażu wideo w 4K w programach DaVinci Resolve i Adobe Premiere Pro. Kluczowe podzespoły i rekomendacje.",
+    link: "/blog/stacja-robocza-do-wideo-4k",
+    category: "Profesjonalne",
+  },
+  {
+    title: "Serwery domowe: Od chmury plików po centrum multimedialne",
+    description: "Jak zacząć przygodę z serwerem domowym? Omawiamy popularne systemy i zastosowania, takie jak Plex, Home Assistant i prywatna chmura danych.",
+    link: "/blog/serwery-domowe-zastosowania",
+    category: "Sieci",
+  },
+  {
+    title: "Cable Management – Sztuka estetyki i wydajności",
+    description: "Praktyczne porady, jak profesjonalnie zarządzać kablami w obudowie komputera, aby poprawić przepływ powietrza, estetykę i ułatwić przyszłe modernizacje.",
+    link: "/blog/cable-management-poradnik",
+    category: "Poradniki",
+  },
+  {
+    title: "BIOS/UEFI – Co to jest i co warto zmienić?",
+    description: "Przewodnik po najważniejszych ustawieniach w BIOS/UEFI. Wyjaśniamy, czym są profile XMP/EXPO, Resizable BAR i jak bezpiecznie zaktualizować firmware.",
+    link: "/blog/bios-uefi-poradnik",
+    category: "Oprogramowanie",
+  },
+  {
+    title: "Dyski SSD: NVMe vs SATA. Który wybrać?",
+    description: "Szczegółowe porównanie dysków SSD NVMe i SATA. Wyjaśniamy różnice w prędkościach, zastosowaniach i pomagamy wybrać najlepszy nośnik dla Twoich potrzeb.",
+    link: "/blog/dyski-ssd-nvme-vs-sata",
+    category: "Porównania",
+  },
 ];
+
 
 export default function Blog() {
   return (
