@@ -1,7 +1,7 @@
 // pages/uslugi/pakiet-indywidualny.js
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FiCheck } from "react-icons/fi";
 
 const PakietIndywidualny = () => {
@@ -26,8 +26,14 @@ const PakietIndywidualny = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 text-[#00bcd4]">Pakiet Indywidualny</h1>
           <p className="text-lg text-center text-gray-300 mb-12">Usługi idealnie dopasowane do Twoich unikalnych potrzeb.</p>
           
+          {/* komponent Image */}
           <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-            <Image src="/images/indywidualny.webp" alt="Indywidualne wsparcie techniczne" layout="fill" objectFit="cover" />
+            <Image 
+              src="/images/indywidualny.webp" 
+              alt="Indywidualne wsparcie techniczne" 
+              fill
+              style={{ objectFit: "cover" }}
+            />
           </div>
 
           <div>

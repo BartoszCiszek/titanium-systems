@@ -32,6 +32,19 @@ const faqData = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
 export default function FAQ() {
   const [searchTerm, setSearchTerm] = useState("");
   const [openIndexes, setOpenIndexes] = useState([]);
@@ -59,10 +72,10 @@ export default function FAQ() {
   return (
     <div className="min-h-screen text-white flex flex-col">
       <Head>
-        <title>FAQ – Budowa Komputerów na Zamówienie | Titanium Systems</title>
+        <title>FAQ – Najczęściej zadawane pytania | Titanium Systems</title>
         <meta
           name="description"
-          content="Najczęściej zadawane pytania dotyczące budowy personalizowanych komputerów. Sprawdź informacje o pakietach, cenach, gwarancji i procesie współpracy."
+          content="Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące budowy komputerów na zamówienie, naszych pakietów usług, cen, gwarancji i procesu współpracy."
         />
         <meta
           name="keywords"
@@ -71,6 +84,7 @@ export default function FAQ() {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://titaniumsystems.pl/faq" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       <main className="container mx-auto py-24 px-4 flex-grow">

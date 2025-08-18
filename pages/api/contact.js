@@ -7,14 +7,12 @@ export default async function handler(req, res) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  // Pobierz dane z formularza
-  const { name, email, phone, service, message } = req.body;
+  const { name, email, service, message } = req.body;
 
-  // Utwórz transporter z wykorzystaniem danych SMTP OVH
   const transporter = nodemailer.createTransport({
     host: 'ssl0.ovh.net',
-    port: 465,       // zmieniony port
-    secure: true,    // Używamy SSL
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -24,7 +22,6 @@ export default async function handler(req, res) {
     },
   });
 
-  // Weryfikacja transportera
   transporter.verify((error) => {
     if (error) {
       console.error("Błąd weryfikacji transportera:", error);
@@ -33,17 +30,15 @@ export default async function handler(req, res) {
     }
   });
 
-  // Przygotuj treść maila
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
-    replyTo: email, // adres nadawcy z formularza
+    replyTo: email,
     subject: `Nowa wiadomość od ${name}`,
-    text: `Imię: ${name}\nEmail: ${email}\nTelefon: ${phone}\nUsługa: ${service}\nWiadomość: ${message}`,
+    text: `Imię: ${name}\nEmail: ${email}\nUsługa: ${service}\nWiadomość: ${message}`,
   };
 
   try {
-    // Wysyłka maila
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true });
   } catch (error) {

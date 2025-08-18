@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiSearch } from "react-icons/fi";
 import { useState } from "react";
 
-// Przykładowe dane dla artykułów blogowych z dodaną datą publikacji
 const blogPosts = [
   {
     title: "Jak przyspieszyć komputer w 5 krokach? Poradnik 2025",
