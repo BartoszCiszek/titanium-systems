@@ -36,7 +36,7 @@ const PakietStart = () => {
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 900 zł</p>
+            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 799 zł</p>
             <h2 className="text-2xl font-semibold text-white mb-4">Co wchodzi w skład pakietu?</h2>
             <ul className="space-y-3 text-gray-300 mb-8">
               {features.map((feature, i) => (
@@ -61,6 +61,22 @@ const PakietStart = () => {
 
               <h3 className="text-2xl font-bold text-white mt-10">Dlaczego warto?</h3>
               <p>Wybierając Pakiet START, oszczędzasz czas i nerwy. Zamiast spędzać godziny na porównywaniu setek podzespołów, dostajesz od nas gotową propozycję, która jest wynikiem naszego doświadczenia i wiedzy. Masz pewność, że wszystkie komponenty będą ze sobą kompatybilne, a całość zostanie złożona przez profesjonalistę. To inwestycja w spokój i sprzęt, który posłuży Ci przez lata.</p>
+              
+              <h3 className="text-2xl font-bold text-white mt-10">Gwarancja i wsparcie</h3>
+              <p className="text-gray-300"><strong>Gwarancja na usługę:</strong> 90 dni od odbioru na stabilność i poprawność konfiguracji w ramach wykonanej usługi. Obejmuje to bezpłatne poprawki konfiguracji wykonanej przez nas (np. ustawienia BIOS/UEFI, profil OC/UV, krzywe wentylatorów).</p>
+              <p className="text-gray-300 mt-4"><strong>Wyłączenia gwarancji na usługę:</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li>Usterki sprzętowe (te są objęte gwarancją producenta).</li>
+                <li>Samodzielne modyfikacje ustawień BIOS/UEFI po odbiorze sprzętu.</li>
+                <li>Instalacja lub użycie oprogramowania, które nadpisuje lub zmienia wprowadzone przez nas ustawienia (np. narzędzia do auto-tuningu, menedżery profili).</li>
+                <li>Aktualizacje systemu lub sterowników, które wprowadzają zmiany w konfiguracji.</li>
+                <li>Zmiana komponentów sprzętowych po wykonaniu usługi.</li>
+              </ul>
+              <p className="text-gray-300 mt-4"><strong>Korekty preferencyjne (nie wynikające z wady):</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li><strong>1 bezpłatna modyfikacja</strong> w okresie gwarancji (np. drobna zmiana krzywych wentylatorów, dostosowanie ustawień).</li>
+                <li>Kolejne korekty są wyceniane indywidualnie, po wcześniejszej akceptacji.</li>
+              </ul>
             </div>
 
             <div className="text-center mt-10">

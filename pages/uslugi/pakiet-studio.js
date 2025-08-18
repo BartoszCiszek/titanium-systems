@@ -36,7 +36,7 @@ const PakietStudio = () => {
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 2000 zł</p>
+            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 1999 zł</p>
             <h2 className="text-2xl font-semibold text-white mb-4">Co wchodzi w skład pakietu?</h2>
             <ul className="space-y-3 text-gray-300 mb-8">
               {features.map((feature, i) => (
@@ -62,6 +62,22 @@ const PakietStudio = () => {
 
               <h3 className="text-2xl font-bold text-white mt-10">Dlaczego warto?</h3>
               <p>Inwestując w Pakiet STUDIO, inwestujesz w swój czas i komfort. Minimalizujesz przestoje w pracy związane ze zmianą sprzętu i unikasz frustracji związanej z konfiguracją skomplikowanego oprogramowania. Otrzymujesz w pełni przygotowane, zoptymalizowane i gotowe do działania narzędzie, które pozwoli Ci realizować projekty szybciej i wydajniej. To usługa, która pozwala Ci robić to, co kochasz, bez martwienia się o technologię, która za tym stoi.</p>
+
+              <h3 className="text-2xl font-bold text-white mt-10">Gwarancja i wsparcie</h3>
+              <p className="text-gray-300"><strong>Gwarancja na usługę:</strong> 90 dni od odbioru na stabilność i poprawność konfiguracji w ramach wykonanej usługi. Obejmuje to bezpłatne poprawki konfiguracji wykonanej przez nas (np. ustawienia BIOS/UEFI, profil OC/UV, krzywe wentylatorów).</p>
+              <p className="text-gray-300 mt-4"><strong>Wyłączenia gwarancji na usługę:</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li>Usterki sprzętowe (te są objęte gwarancją producenta).</li>
+                <li>Samodzielne modyfikacje ustawień BIOS/UEFI po odbiorze sprzętu.</li>
+                <li>Instalacja lub użycie oprogramowania, które nadpisuje lub zmienia wprowadzone przez nas ustawienia (np. narzędzia do auto-tuningu, menedżery profili).</li>
+                <li>Aktualizacje systemu lub sterowników, które wprowadzają zmiany w konfiguracji.</li>
+                <li>Zmiana komponentów sprzętowych po wykonaniu usługi.</li>
+              </ul>
+              <p className="text-gray-300 mt-4"><strong>Korekty preferencyjne (nie wynikające z wady):</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li><strong>1 bezpłatna modyfikacja</strong> w okresie gwarancji (np. drobna zmiana krzywych wentylatorów, dostosowanie ustawień).</li>
+                <li>Kolejne korekty są wyceniane indywidualnie, po wcześniejszej akceptacji.</li>
+              </ul>
             </div>
 
             <div className="text-center mt-10">

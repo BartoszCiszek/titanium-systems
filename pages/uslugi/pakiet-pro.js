@@ -36,7 +36,7 @@ const PakietPro = () => {
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 1400 zł</p>
+            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 1399 zł</p>
             <h2 className="text-2xl font-semibold text-white mb-4">Co wchodzi w skład pakietu?</h2>
             <ul className="space-y-3 text-gray-300 mb-8">
               {features.map((feature, i) => (
@@ -61,6 +61,22 @@ const PakietPro = () => {
 
               <h3 className="text-2xl font-bold text-white mt-10">Dlaczego warto?</h3>
               <p>Ręczna optymalizacja to proces czasochłonny i wymagający dużej wiedzy. Wybierając Pakiet PRO, powierzasz swój sprzęt ekspertowi, który bezpiecznie podniesie jego wydajność, dbając jednocześnie o stabilność i kulturę pracy. Zyskujesz komputer, który jest nie tylko "złożony", ale "dopieszczony" w każdym detalu – gotowy do najcięższych zadań i najbardziej wymagających gier. To różnica między posiadaniem szybkiego samochodu a posiadaniem szybkiego samochodu idealnie ustawionego na tor.</p>
+
+              <h3 className="text-2xl font-bold text-white mt-10">Gwarancja i wsparcie</h3>
+              <p className="text-gray-300"><strong>Gwarancja na usługę:</strong> 90 dni od odbioru na stabilność i poprawność konfiguracji w ramach wykonanej usługi. Obejmuje to bezpłatne poprawki konfiguracji wykonanej przez nas (np. ustawienia BIOS/UEFI, profil OC/UV, krzywe wentylatorów).</p>
+              <p className="text-gray-300 mt-4"><strong>Wyłączenia gwarancji na usługę:</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li>Usterki sprzętowe (te są objęte gwarancją producenta).</li>
+                <li>Samodzielne modyfikacje ustawień BIOS/UEFI po odbiorze sprzętu.</li>
+                <li>Instalacja lub użycie oprogramowania, które nadpisuje lub zmienia wprowadzone przez nas ustawienia (np. narzędzia do auto-tuningu, menedżery profili).</li>
+                <li>Aktualizacje systemu lub sterowników, które wprowadzają zmiany w konfiguracji.</li>
+                <li>Zmiana komponentów sprzętowych po wykonaniu usługi.</li>
+              </ul>
+              <p className="text-gray-300 mt-4"><strong>Korekty preferencyjne (nie wynikające z wady):</strong></p>
+              <ul className="list-disc list-inside text-gray-400 space-y-2 mt-2">
+                <li><strong>1 bezpłatna modyfikacja</strong> w okresie gwarancji (np. drobna zmiana krzywych wentylatorów, dostosowanie ustawień).</li>
+                <li>Kolejne korekty są wyceniane indywidualnie, po wcześniejszej akceptacji.</li>
+              </ul>
             </div>
 
             <div className="text-center mt-10">
