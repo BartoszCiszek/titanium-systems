@@ -73,8 +73,8 @@ export default function PoradnikOCUV() {
   return (
     <div className="min-h-screen text-white">
       <Head>
-        <title>Overclocking i Undervolting – Kompletny poradnik | Titanium Systems</title>
-        <meta name="description" content="Dowiedz się, czym jest Overclocking (OC) i Undervolting (UV), jakie korzyści niosą i jak bezpiecznie wycisnąć więcej mocy ze swojego procesora i karty graficznej." />
+        <title>Poradnik OC/UV: Jak bezpiecznie podkręcić PC? | Titanium Systems</title>
+        <meta name="description" content="Dowiedz się, jak krok po kroku przeprowadzić overclocking (OC) i undervolting (UV) procesora oraz karty graficznej. Zwiększ wydajność i obniż temperatury swojego komputera!" />
         <link rel="canonical" href="https://titaniumsystems.pl/blog/poradnik-oc-uv" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />

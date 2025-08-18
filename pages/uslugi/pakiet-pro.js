@@ -1,7 +1,7 @@
 // pages/uslugi/pakiet-pro.js
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FiCheck } from "react-icons/fi";
 
 const PakietPro = () => {
@@ -25,8 +25,14 @@ const PakietPro = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 text-[#00bcd4]">Pakiet PRO</h1>
           <p className="text-lg text-center text-gray-300 mb-12">Dla wymagających użytkowników, którzy oczekują maksimum wydajności.</p>
 
+          {/* komponent Image */}
           <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-            <Image src="/images/pro.webp" alt="Overclocking i Undervolting komputera" layout="fill" objectFit="cover" />
+            <Image 
+              src="/images/pro.webp" 
+              alt="Overclocking i Undervolting komputera" 
+              fill
+              style={{ objectFit: "cover" }}
+            />
           </div>
 
           <div>

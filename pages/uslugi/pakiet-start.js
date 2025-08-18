@@ -1,7 +1,7 @@
 // pages/uslugi/pakiet-start.js
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FiCheck } from "react-icons/fi";
 
 const PakietStart = () => {
@@ -25,8 +25,14 @@ const PakietStart = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 text-[#00bcd4]">Pakiet START</h1>
           <p className="text-lg text-center text-gray-300 mb-12">Solidny komputer w idealnie dopasowanym budżecie.</p>
 
+          {/* komponent Image */}
           <div className="relative w-full h-80 rounded-lg overflow-hidden my-8 shadow-lg">
-            <Image src="/images/start.webp" alt="Składanie komputera" layout="fill" objectFit="cover" />
+            <Image 
+              src="/images/start.webp" 
+              alt="Składanie komputera" 
+              fill
+              style={{ objectFit: "cover" }}
+            />
           </div>
 
           <div>

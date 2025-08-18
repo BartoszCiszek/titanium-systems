@@ -1,6 +1,6 @@
 // components/Carousel.js
 import { useState, useEffect, useRef } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Carousel = ({ 
@@ -62,15 +62,13 @@ const Carousel = ({
           animate={{ opacity: current === index ? 1 : 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           className="absolute inset-0 cursor-pointer"
-          // --- KLUCZOWA POPRAWKA JEST TUTAJ ---
-          // Ta linia sprawia, że niewidoczne slajdy są nieklikalne
           style={{ pointerEvents: current === index ? 'auto' : 'none' }}
         >
           <Image
             src={img}
             alt={`Slide ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
           />
         </motion.div>
       ))}

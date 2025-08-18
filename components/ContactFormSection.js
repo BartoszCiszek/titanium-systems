@@ -19,16 +19,6 @@ const ContactFormSection = () => {
   const { service } = router.query;
 
   useEffect(() => {
-    // Reset statusu formularza po 5 sekundach
-    if (formStatus === 'success' || formStatus === 'error') {
-      const timer = setTimeout(() => {
-        setFormStatus('idle');
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [formStatus]);
-  
-  useEffect(() => {
     // Ustawiamy usługę w formularzu, jeśli jest w URL
     if (typeof service === 'string') {
       setFormData(prev => ({ ...prev, service: `Pakiet ${service}` }));
@@ -62,11 +52,8 @@ const ContactFormSection = () => {
       });
 
       if (response.ok) {
-        setFormStatus('success');
-        setFormData({ name: '', email: '', message: '', service: '' });
-        setIsPolicyAccepted(false);
-        // Czyścimy parametr z URL po wysłaniu
-        router.push('/uslugi#formularz-kontaktowy', undefined, { shallow: true });
+        // Przekierowanie na stronę podziękowania
+        router.push('/dziekujemy');
       } else {
         throw new Error('Odpowiedź serwera nie była pomyślna.');
       }

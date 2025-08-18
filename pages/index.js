@@ -1,13 +1,11 @@
 // pages/index.js
 import Head from "next/head";
-import Image from "next/legacy/image";
-import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from "framer-motion";
 import TextType from '../components/TextType';
 import SpotlightCard from '../components/SpotlightCard';
-// Usunięto import Stepper, { Step } - nie jest już potrzebny tutaj
 import { FiCpu, FiVideo, FiMusic, FiGrid, FiAward, FiCheckCircle, FiTool } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -77,12 +75,15 @@ export default function Home() {
         <section id="aboutme" className="relative text-white py-48">
           <div className="relative">
               <div className="flex flex-col md:flex-row items-center w-full md:w-10/12 mx-auto p-4">
+                {/* ZMIANA: Zaktualizowany komponent Image */}
                 <div className="w-full md:w-1/2 flex justify-center">
-                  <img
+                  <Image
                     src="/images/about.webp"
                     alt="Bartosz Ciszek – ekspert w budowie personalizowanych komputerów"
+                    width={500}
+                    height={750}
                     className="w-full h-auto max-w-[500px] object-cover rounded-lg shadow-lg"
-                    loading="lazy"
+                    priority
                   />
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col justify-center mt-8 md:mt-0 md:ml-8">

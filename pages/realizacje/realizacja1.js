@@ -1,6 +1,6 @@
 // pages/realizacje/realizacja1.js
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useState } from "react";
 import Carousel from "../../components/Carousel";
 
@@ -87,8 +87,8 @@ export default function Realizacja1() {
             <Image
               src={modalImage}
               alt="Powiększony obraz"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: 'contain' }}
               className="rounded"
             />
           </div>
