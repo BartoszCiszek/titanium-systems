@@ -36,7 +36,7 @@ const PakietStart = () => {
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 799 zł</p>
+            <p className="text-3xl font-bold text-white text-center mb-6">Cena usługi: od 499 zł</p>
             <h2 className="text-2xl font-semibold text-white mb-4">Co wchodzi w skład pakietu?</h2>
             <ul className="space-y-3 text-gray-300 mb-8">
               {features.map((feature, i) => (

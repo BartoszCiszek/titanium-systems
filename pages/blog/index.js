@@ -146,6 +146,41 @@ const blogPosts = [
     category: "Porównania",
     date: "2025-08-17",
   },
+  {
+    title: "Sztuka ciszy, bezgłośny komputer?",
+    description: "Szczegółowe porównanie dysków SSD NVMe i SATA. Wyjaśniamy różnice w prędkościach, zastosowaniach i pomagamy wybrać najlepszy nośnik dla Twoich potrzeb.",
+    link: "/blog/sztuka-ciszy-jak-zbudowac-bezglosny-komputer",
+    category: "Porównania",
+    date: "2025-08-21",
+  },
+  {
+    title: "Wirtualizacja dla Początkujących: Czym jest i jak zacząć?",
+    description: "Dowiedz się, czym jest wirtualizacja, jakie korzyści daje i jak możesz uruchomić drugi system operacyjny na swoim komputerze za pomocą VirtualBox lub Hyper-V.",
+    link: "/blog/wirtualizacja-dla-poczatkujacych",
+    category: "Oprogramowanie",
+    date: "2025-08-21",
+  },
+  {
+    title: "Monitor dla Gracza vs. Grafika: Kluczowe Różnice",
+    description: "Porównujemy kluczowe parametry monitorów dla graczy i profesjonalistów. Dowiedz się, na co zwrócić uwagę przy wyborze ekranu do gier i pracy z kolorem.",
+    link: "/blog/monitor-dla-gracza-vs-grafika",
+    category: "Porównania",
+    date: "2025-08-21",
+  },
+  {
+    title: "RAID w Domowym Serwerze: Jak Chronić Swoje Dane?",
+    description: "Wyjaśniamy, czym jest RAID i jakie są jego najpopularniejsze poziomy (RAID 1, 5, 10). Dowiedz się, jak zabezpieczyć swoje dane w domowym serwerze NAS.",
+    link: "/blog/raid-w-domowym-serwerze",
+    category: "Sieci",
+    date: "2025-08-21",
+  },
+  {
+    title: "Przyszłość Grania: Czy Streaming Zastąpi PC?",
+    description: "Analiza zalet i wad streamingu gier (np. GeForce NOW) w porównaniu do posiadania dedykowanego komputera gamingowego. Co jest lepsze dla Ciebie?",
+    link: "/blog/przyszlosc-grania-streaming-vs-pc",
+    category: "Gaming",
+    date: "2025-08-21",
+  },
 ];
 
 
