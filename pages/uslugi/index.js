@@ -7,7 +7,7 @@ import { FiCheck, FiTool } from "react-icons/fi";
 const servicePackages = [
   {
     name: "START",
-    price: "799 zł",
+    price: "499 zł",
     description: "Solidna podstawa dla Twojego nowego komputera.",
     features: [
       "Konsultacja i analiza potrzeb",
@@ -21,7 +21,7 @@ const servicePackages = [
   },
   {
     name: "PRO",
-    price: "1399 zł",
+    price: "999 zł",
     description: "Dla wymagających graczy i entuzjastów.",
     features: [
       "Wszystko z pakietu START",
@@ -35,7 +35,7 @@ const servicePackages = [
   },
   {
     name: "STUDIO",
-    price: "1999 zł",
+    price: "1499 zł",
     description: "Usługa 'pod klucz' dla profesjonalistów.",
     features: [
       "Wszystko z pakietu PRO",
@@ -96,6 +96,9 @@ export default function Uslugi() {
           </h1>
           <p data-aos="fade-up" data-aos-delay="100" className="text-lg text-gray-400 max-w-2xl mx-auto">
             Wybierz plan, który najlepiej odpowiada Twoim oczekiwaniom. Ceny dotyczą usługi, koszt części ustalamy indywidualnie.
+          </p>
+          <p data-aos="fade-up" data-aos-delay="150" className="text-sm text-gray-500 max-w-2xl mx-auto mt-4">
+            Ceny brutto dla klientów indywidualnych. W przypadku firm wystawiamy fakturę VAT (ceny netto +23%).
           </p>
         </div>
 

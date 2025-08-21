@@ -184,5 +184,29 @@
     <priority>0.7</priority>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
   </url>
-
+   <url>
+    <loc>https://titaniumsystems.pl/blog/dyski-ssd-nvme-vs-sata</loc>
+    <priority>0.7</priority>
+    <lastmod>2025-08-17T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://titaniumsystems.pl/blog/wirtualizacja-dla-poczatkujacych</loc>
+    <priority>0.7</priority>
+    <lastmod>2025-08-21T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://titaniumsystems.pl/blog/monitor-dla-gracza-vs-grafika</loc>
+    <priority>0.7</priority>
+    <lastmod>2025-08-21T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://titaniumsystems.pl/blog/raid-w-domowym-serwerze</loc>
+    <priority>0.7</priority>
+    <lastmod>2025-08-21T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://titaniumsystems.pl/blog/przyszlosc-grania-streaming-vs-pc</loc>
+    <priority>0.7</priority>
+    <lastmod>2025-08-21T00:00:00+00:00</lastmod>
+  </url>
 </urlset>
